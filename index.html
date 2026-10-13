@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Harrys PC-Werkstatt</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Persönliche Lernseite: Schritt für Schritt den Computer lernen.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%8C%A8%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>
+/* Schriften liegen lokal im Ordner fonts/ (SIL Open Font License 1.1) */
+@font-face{font-family:'Atkinson Hyperlegible';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/atkinson-hyperlegible-400-italic.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Atkinson Hyperlegible';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/atkinson-hyperlegible-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Atkinson Hyperlegible';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/atkinson-hyperlegible-700.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Atkinson Hyperlegible Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/atkinson-hyperlegible-mono-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Atkinson Hyperlegible Mono';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/atkinson-hyperlegible-mono-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/bricolage-grotesque-600.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:800;font-display:swap;src:url('fonts/bricolage-grotesque-600.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+</style>
+<style>
+:root{
+  --bg:#e9edf2;--surface:#ffffff;--surface-2:#f2f4f8;--ink:#15203b;--ink-soft:#56607a;--line:#d5dbe5;
+  --accent:#2447d6;--accent-ink:#ffffff;--accent-soft:#e1e7ff;--accent-edge:#14298a;
+  --ok:#14804a;--ok-soft:#dcf3e5;--bad:#d1243f;--bad-soft:#fde2e6;--gold:#e9a100;
+  --f-pinky:#f4a9c8;--f-ring:#ffd166;--f-middle:#95dbaa;--f-index:#8fc1ff;--f-thumb:#cfd5e0;--key-ink:#15203b;
+  --edge:rgba(21,32,59,.28);--paper-bg:#dfe3ea;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1424;--surface:#161e33;--surface-2:#1e2740;--ink:#e9edf7;--ink-soft:#9aa5c0;--line:#2c3654;
+    --accent:#8099ff;--accent-ink:#0e1424;--accent-soft:#232f5c;--accent-edge:#4b62c7;
+    --ok:#4fd28a;--ok-soft:#173a2a;--bad:#ff6b81;--bad-soft:#3d1a24;--gold:#f5b82e;
+    --f-pinky:#e591b4;--f-ring:#e9bb4f;--f-middle:#7cc893;--f-index:#79aaf0;--f-thumb:#aab3c4;--key-ink:#0e1424;
+    --edge:rgba(0,0,0,.5);--paper-bg:#252d44;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1424;--surface:#161e33;--surface-2:#1e2740;--ink:#e9edf7;--ink-soft:#9aa5c0;--line:#2c3654;
+  --accent:#8099ff;--accent-ink:#0e1424;--accent-soft:#232f5c;--accent-edge:#4b62c7;
+  --ok:#4fd28a;--ok-soft:#173a2a;--bad:#ff6b81;--bad-soft:#3d1a24;--gold:#f5b82e;
+  --f-pinky:#e591b4;--f-ring:#e9bb4f;--f-middle:#7cc893;--f-index:#79aaf0;--f-thumb:#aab3c4;--key-ink:#0e1424;
+  --edge:rgba(0,0,0,.5);--paper-bg:#252d44;color-scheme:dark;
+}
+[hidden]{display:none!important}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;line-height:1.08;margin:0 0 .4em;letter-spacing:-.015em}
+h1{font-size:clamp(42px,6.4vw,76px);font-weight:800}
+h2{font-size:clamp(28px,3.4vw,38px);font-weight:800}
+h3{font-size:22px;font-weight:600}
+p{margin:0 0 .8em}
+a{color:var(--accent)}
+kbd{font-family:inherit;font-weight:700;font-size:.85em;display:inline-block;min-width:1.9em;text-align:center;padding:.08em .5em;margin:0 .1em;border-radius:7px;background:var(--surface);border:1px solid var(--line);box-shadow:0 2px 0 var(--line);color:var(--ink);white-space:nowrap}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.muted{color:var(--ink-soft)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* Kopfzeile */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar{display:flex;align-items:center;gap:14px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px;white-space:nowrap}
+.logo{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--f-index);color:var(--key-ink);box-shadow:0 3px 0 var(--edge);font-size:19px}
+.nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto;padding:6px 0}
+.nav::-webkit-scrollbar{display:none}
+.nav a{padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:700;font-size:15px;white-space:nowrap}
+.nav a:hover{background:var(--surface)}
+.nav a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+@media (max-width:1100px){.brand span:last-child{display:none}}
+@media (max-width:780px){.brand span:last-child{display:inline}.topbar{flex-direction:column;align-items:stretch;gap:0;padding-top:8px}.nav{margin-left:0}.brand{font-size:18px}}
+
+main{padding:36px 0 64px}
+
+/* Knöpfe im Tastenkappen-Stil */
+.btn{font:inherit;font-weight:700;font-size:17px;border:0;border-radius:12px;padding:12px 20px;min-height:48px;background:var(--accent);color:var(--accent-ink);cursor:pointer;box-shadow:0 4px 0 var(--accent-edge);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .07s,box-shadow .07s}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--accent-edge)}
+.btn.ghost{background:var(--surface);color:var(--ink);box-shadow:0 4px 0 var(--line);border:1px solid var(--line)}
+.btn.ghost:active{box-shadow:0 1px 0 var(--line)}
+.btn.big{font-size:20px;padding:16px 26px}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px}
+
+/* Start */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:center;margin-bottom:52px}
+.lead{font-size:21px;max-width:32em;color:var(--ink-soft)}
+.hero-actions{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px;align-items:center}
+.total{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--ink-soft)}
+.total .bar{width:150px}
+.caps-art{display:flex;flex-direction:column;align-items:center;gap:14px;transform:rotate(-4deg)}
+.caps-row{display:flex;gap:12px}
+.cap{width:clamp(54px,7.4vw,84px);aspect-ratio:1;border-radius:16px;display:grid;place-items:center;font:800 clamp(26px,3.4vw,40px)/1 "Bricolage Grotesque",sans-serif;color:var(--key-ink);box-shadow:0 8px 0 var(--edge),inset 0 -6px 0 rgba(0,0,0,.08);animation:press .26s ease-out both;animation-delay:calc(var(--i) * 120ms + 300ms)}
+@keyframes press{0%{transform:translateY(0)}45%{transform:translateY(6px);box-shadow:0 2px 0 var(--edge),inset 0 -6px 0 rgba(0,0,0,.08)}100%{transform:translateY(0)}}
+@media (max-width:840px){.hero{grid-template-columns:1fr}.caps-art{order:-1;margin-bottom:6px}}
+.f-pinky{background:var(--f-pinky)}.f-ring{background:var(--f-ring)}.f-middle{background:var(--f-middle)}.f-index{background:var(--f-index)}.f-thumb{background:var(--f-thumb)}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0 44px}
+.step{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;position:relative;box-shadow:0 4px 0 var(--line);transition:transform .1s,box-shadow .1s}
+.step:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--line)}
+.step:active{transform:translateY(3px);box-shadow:0 1px 0 var(--line)}
+.step-top{display:flex;align-items:center;justify-content:space-between}
+.stepcap{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--bg);font:800 17px "Bricolage Grotesque",sans-serif;box-shadow:0 3px 0 var(--edge);vertical-align:middle}
+.step-emo{font-size:30px;line-height:1}
+.step b{font-size:19px;margin-top:6px}
+.step p{font-size:15.5px;color:var(--ink-soft);margin:0;flex:1}
+.step-prog{font-size:14px;color:var(--ink-soft);font-weight:700}
+.step.complete{border-color:var(--ok)}
+.step.complete .stepcap{background:var(--ok)}
+.bar{height:10px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .5s}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:16px}
+.tip{display:flex;gap:12px}.tip span{font-size:28px;line-height:1.1}.tip p{margin:0;font-size:16.5px}
+
+/* Bereichsköpfe */
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.sec-head h2{display:flex;align-items:center;gap:14px}
+.sec-head p{max-width:40em;color:var(--ink-soft);margin:0}
+.seg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px;gap:4px}
+.seg-b{font:inherit;font-weight:700;font-size:16px;border:0;background:transparent;color:var(--ink);padding:10px 16px;border-radius:10px;cursor:pointer}
+.seg-b.on{background:var(--ink);color:var(--bg)}
+.touch-note{display:none;background:var(--accent-soft);border-radius:14px;padding:12px 16px;font-weight:700;margin-bottom:20px}
+@media (hover:none) and (pointer:coarse){.touch-note{display:block}}
+
+/* Lektionen */
+.lessons{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:20px}
+.lesson{font:inherit;text-align:left;cursor:pointer;background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:12px;display:grid;grid-template-columns:auto 1fr;column-gap:10px;color:var(--ink);position:relative}
+.lesson:hover{border-color:var(--accent)}
+.lesson.on{border-color:var(--accent);background:var(--accent-soft)}
+.l-num{grid-row:1/4;width:34px;height:34px;border-radius:9px;background:var(--surface-2);border:1px solid var(--line);display:grid;place-items:center;font-weight:800}
+.lesson.on .l-num{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.l-t{font-weight:700;font-size:15.5px;line-height:1.25}
+.l-sub{font-size:13.5px;color:var(--ink-soft)}
+.stars{color:var(--gold);letter-spacing:2px;font-size:15px}.stars i{font-style:normal;color:var(--line)}
+.lesson.rec::after{content:"Als Nächstes";position:absolute;top:-10px;right:10px;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px}
+
+.trainer-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.trainer-head p{margin:0;font-size:16px;max-width:46em}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.stats div{background:var(--surface-2);border-radius:12px;padding:10px 14px}
+.stats span{display:block;font-size:13.5px;color:var(--ink-soft);font-weight:700}
+.stats b{font:800 26px "Bricolage Grotesque",sans-serif}
+.textline,.startbox{font-family:"Atkinson Hyperlegible Mono",ui-monospace,Consolas,"Courier New",monospace;background:var(--surface-2);border:2px solid var(--line);border-radius:16px;padding:16px 22px;min-height:136px}
+.textline{font-size:clamp(22px,3vw,32px);line-height:1.8;white-space:pre-wrap;word-break:break-word}
+.textline span{border-radius:4px}
+.textline .todo{color:var(--ink-soft)}
+.textline .done{color:var(--ok)}
+.textline .done.bad{color:var(--bad);text-decoration:underline wavy;text-decoration-thickness:1px}
+.textline .cur{background:var(--accent-soft);color:var(--ink);box-shadow:inset 0 -4px 0 var(--accent)}
+.textline .cur.miss{background:var(--bad-soft);box-shadow:inset 0 -4px 0 var(--bad)}
+.startbox{font-family:inherit;text-align:center;display:grid;place-items:center;border-style:dashed}
+.startbox p{margin:.2em 0}
+.ov-emoji{font-size:42px;line-height:1;margin-bottom:6px}
+.ov-title{font:800 24px "Bricolage Grotesque",sans-serif;margin-bottom:6px}
+.ov-go{margin-top:12px!important;font-weight:700;color:var(--accent)}
+.shake{animation:shake .25s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.caps-warn{margin:12px 0 0;padding:10px 14px;border-radius:12px;background:var(--bad-soft);color:var(--bad);font-weight:700}
+.finger-hint{margin:16px 0;font-size:19px;min-height:1.7em;text-align:center}
+.finger-hint b{color:var(--accent)}
+
+/* Bildschirm-Tastatur */
+.kb{--u:clamp(26px,4.3vw,48px);--g:clamp(3px,.5vw,6px);display:flex;flex-direction:column;gap:var(--g);padding:14px;background:var(--surface-2);border:1px solid var(--line);border-radius:16px;overflow-x:auto;width:fit-content;max-width:100%;margin:0 auto}
+.kb.mini{--u:clamp(22px,3.1vw,36px)}
+.kb-row{display:flex;gap:var(--g)}
+.key{flex:0 0 auto;width:calc(var(--u) * var(--w,1) + var(--g) * (var(--w,1) - 1));height:var(--u);border-radius:8px;display:grid;place-items:center;font-weight:700;font-size:calc(var(--u) * .38);color:var(--key-ink);box-shadow:0 3px 0 var(--edge);position:relative;user-select:none}
+.key.mod{background:var(--surface);color:var(--ink-soft);box-shadow:0 3px 0 var(--line)}
+.key.small{font-size:calc(var(--u) * .26)}
+.key.bump::after{content:"";position:absolute;bottom:17%;left:35%;width:30%;height:3px;border-radius:2px;background:rgba(0,0,0,.45)}
+.key.next{transform:translateY(-3px);box-shadow:0 0 0 3px var(--accent),0 0 0 7px color-mix(in srgb,var(--accent) 30%,transparent);z-index:1}
+.kb-legend{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;margin-top:12px;font-size:14.5px;color:var(--ink-soft)}
+.kb-legend span{display:inline-flex;align-items:center;gap:6px}
+.kb-legend i{width:15px;height:15px;border-radius:4px;display:inline-block}
+.hands{display:block;width:100%;max-width:500px;margin:16px auto 0}
+.hands .fg,.hands .palm{fill:var(--surface-2);stroke:var(--line);stroke-width:2}
+.hands .fg.on{stroke:var(--accent);stroke-width:4}
+.hands .fg.on.c-pinky{fill:var(--f-pinky)}.hands .fg.on.c-ring{fill:var(--f-ring)}.hands .fg.on.c-middle{fill:var(--f-middle)}.hands .fg.on.c-index{fill:var(--f-index)}.hands .fg.on.c-thumb{fill:var(--f-thumb)}
+.hands text{fill:var(--ink-soft);font-size:14px;font-weight:700;text-anchor:middle;font-family:"Atkinson Hyperlegible",sans-serif}
+
+/* Spiel */
+.game-bar{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+select{font:inherit;font-size:16px;padding:8px 12px;border-radius:10px;border:2px solid var(--line);background:var(--surface);color:var(--ink)}
+.hud{display:flex;gap:20px;font-weight:700;align-items:center;flex-wrap:wrap}
+.hud b{font:800 24px "Bricolage Grotesque",sans-serif}
+.rain{position:relative;height:430px;border-radius:16px;overflow:hidden;border:2px solid var(--line);background:linear-gradient(180deg,var(--accent-soft),var(--surface) 80%)}
+.rain.wrong{animation:shake .25s}
+.ground{position:absolute;left:0;right:0;bottom:0;height:14px;background:repeating-linear-gradient(90deg,var(--ink) 0 18px,var(--ink-soft) 18px 36px)}
+.drop{position:absolute;left:0;top:0;width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font:600 28px "Atkinson Hyperlegible Mono",ui-monospace,monospace;color:var(--key-ink);box-shadow:0 4px 0 var(--edge);will-change:transform}
+.drop.pop{animation:vanish .25s forwards}
+.drop.splat{animation:splat .3s forwards;background:var(--bad)!important}
+@keyframes vanish{to{opacity:0;scale:1.8}}
+@keyframes splat{to{opacity:0;scale:1.3 .4}}
+.overlay{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:18px;background:var(--surface);background:color-mix(in srgb,var(--surface) 93%,transparent);z-index:5}
+.overlay > div{max-width:32em}
+
+/* Maus */
+.mtabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:16px}
+.mtab{font:inherit;font-weight:700;cursor:pointer;background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:14px;display:flex;align-items:center;gap:10px;color:var(--ink)}
+.mtab:hover{border-color:var(--accent)}
+.mtab.on{border-color:var(--accent);background:var(--accent-soft)}
+.m-emo{font-size:26px}.m-ok{margin-left:auto;color:var(--ok);font-size:20px}
+.mhud{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.mhud p{margin:0;max-width:46em}
+.mcount{font:800 26px "Bricolage Grotesque",sans-serif;white-space:nowrap}
+.arena{position:relative;height:430px;border-radius:16px;border:2px dashed var(--line);background:var(--surface-2);overflow:hidden;user-select:none;-webkit-user-select:none}
+.arena-empty,.m-done{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;color:var(--ink-soft)}
+.m-done{color:var(--ink)}
+.target{position:absolute;border:0;padding:0;border-radius:50%;cursor:pointer;background:radial-gradient(circle,var(--accent) 0 20%,#fff 21% 40%,var(--accent) 41% 60%,#fff 61% 80%,var(--accent) 81%);box-shadow:0 4px 0 var(--edge);animation:appear .18s ease-out}
+.target.pop{animation:vanish .2s forwards}
+@keyframes appear{from{scale:.3;opacity:0}}
+.icon{position:absolute;width:112px;padding:10px 6px;border-radius:12px;display:flex;flex-direction:column;align-items:center;gap:4px;border:2px solid transparent;animation:appear .18s ease-out}
+.icon .i-emo{font-size:46px;line-height:1;pointer-events:none}
+.icon .i-lbl{font-size:14px;font-weight:700;text-align:center;line-height:1.2;color:var(--ink);pointer-events:none}
+.icon.sel{background:color-mix(in srgb,var(--f-index) 40%,transparent);border-color:var(--f-index)}
+.icon.opened{background:var(--ok-soft);border-color:var(--ok)}
+.icon.file{cursor:grab;touch-action:none}
+.icon.dragging{cursor:grabbing;z-index:5;scale:1.06;background:var(--surface);box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.icon.big{width:160px}.icon.big .i-emo{font-size:72px}
+.icon.hot{background:var(--accent-soft);border-color:var(--accent);border-style:dashed}
+.icon.into{animation:vanish .25s forwards}
+.m-hint{position:absolute;left:50%;bottom:14px;translate:-50% 0;background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:12px;font-weight:700;font-size:15.5px;width:max-content;max-width:94%;text-align:center;z-index:10;pointer-events:none}
+.arena:has(.ctx) .m-hint{bottom:auto;top:14px}
+.ctx{position:absolute;z-index:20;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.22);padding:6px;display:flex;flex-direction:column;min-width:170px}
+.ctx button{font:inherit;font-size:16px;text-align:left;border:0;background:transparent;color:var(--ink);padding:9px 12px;border-radius:7px;cursor:pointer}
+.ctx button:hover{background:var(--accent-soft)}
+
+/* Tastenkürzel */
+.sc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:12px;margin:20px 0 26px}
+.sc-card{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:16px;position:relative}
+.sc-card.learned{border-color:var(--ok)}
+.sc-card.learned::after{content:"✔ gelernt";position:absolute;top:12px;right:12px;font-size:12.5px;font-weight:700;color:var(--ok)}
+.sc-keys{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+.sc-keys kbd{font-size:18px;padding:6px 12px}
+.sc-card b{font-size:18px}.sc-card p{font-size:15px;color:var(--ink-soft);margin:4px 0 0}
+.quiz{text-align:center;margin-bottom:26px}
+.q-label{color:var(--ink-soft);font-weight:700;margin:0}
+.q-name{font:800 clamp(36px,5vw,56px)/1.1 "Bricolage Grotesque",sans-serif;margin:6px 0 10px;color:var(--accent)}
+.q-msg{min-height:1.6em;font-weight:700}.q-msg.ok{color:var(--ok)}.q-msg.bad{color:var(--bad)}
+.q-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:12px 0}
+.q-prog{color:var(--ink-soft);font-size:15px;margin-bottom:16px}
+.win-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:12px}
+.win-list div{background:var(--surface-2);border-radius:12px;padding:12px 14px;font-size:15.5px}
+
+/* Word & Excel */
+.split{display:grid;grid-template-columns:minmax(270px,340px) 1fr;gap:20px;align-items:start}
+@media (max-width:940px){.split{grid-template-columns:1fr}}
+.tasklist{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-direction:column;gap:8px}
+.tasklist li{display:flex;gap:12px;padding:12px;border-radius:12px;border:2px solid transparent}
+.tasklist li.cur{border-color:var(--accent);background:var(--accent-soft)}
+.tasklist li.done{opacity:.72}
+.tick{flex:0 0 32px;height:32px;border-radius:9px;display:grid;place-items:center;font-weight:800;background:var(--surface-2);border:1px solid var(--line);font-size:15px}
+.tasklist li.done .tick{background:var(--ok);border-color:var(--ok);color:#fff}
+.tasklist li.cur .tick{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.tasklist b{display:block;font-size:16.5px}
+.tasklist p{margin:2px 0 0;font-size:15px}
+.tasklist .real{color:var(--ink-soft);font-size:14.5px;margin-top:6px}
+.all-done{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--ok-soft);color:var(--ok);font-weight:700}
+.office{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.o-title{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 8px 8px 16px;color:#fff;font-size:15px;font-weight:700}
+.word .o-title{background:#2b579a}.excel .o-title{background:#217346}
+.o-reset{font:inherit;font-size:14px;font-weight:700;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.12);color:#fff;border-radius:8px;padding:6px 12px;cursor:pointer}
+.ribbon{background:var(--surface-2);border-bottom:1px solid var(--line)}
+.rtabs{display:flex;gap:2px;padding:6px 10px 0;font-size:14px}
+.rtab{padding:6px 12px;border-radius:8px 8px 0 0;color:var(--ink-soft)}
+.rtab.on{background:var(--surface);color:var(--ink);font-weight:700}
+.rgroups{display:flex;flex-wrap:wrap;gap:6px;padding:10px;background:var(--surface)}
+.rgroup{display:flex;flex-direction:column;align-items:center;gap:6px;padding:4px 12px;border-right:1px solid var(--line)}
+.rgroup:last-child{border-right:0}
+.rgroup small{font-size:12.5px;color:var(--ink-soft)}
+.rbtns{display:flex;gap:4px;align-items:center;flex-wrap:wrap;justify-content:center}
+.rbtns span{font-size:13px;color:var(--ink-soft);margin-right:2px}
+.rb{font:inherit;min-width:40px;height:40px;padding:0 8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:7px;cursor:pointer;display:grid;place-items:center;font-size:17px}
+.rb:hover{background:var(--accent-soft);border-color:var(--accent)}
+.rb.on{background:var(--accent-soft);border-color:var(--accent)}
+.rb.b{font-weight:800}.rb.i{font-style:italic;font-family:Georgia,serif}.rb.u{text-decoration:underline}
+.rb.sz{min-width:36px;height:32px;font-size:14px}
+.rb svg{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round}
+.rb svg circle{fill:currentColor;stroke:none}
+.paper-wrap{background:var(--paper-bg);padding:26px 16px;max-height:600px;overflow:auto}
+.paper{background:#fff;color:#1a1a1a;max-width:640px;margin:0 auto;min-height:440px;padding:44px 52px;box-shadow:0 2px 14px rgba(0,0,0,.18);font-family:Calibri,Carlito,"Segoe UI",Arial,sans-serif;font-size:13pt;line-height:1.5;outline:none;caret-color:#2b579a}
+.paper:focus{box-shadow:0 0 0 3px rgba(43,87,154,.35),0 2px 14px rgba(0,0,0,.18)}
+@media (max-width:600px){.paper{padding:24px 20px}}
+.fxbar{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--surface);border-bottom:1px solid var(--line)}
+.namebox{min-width:64px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;font-weight:700;font-size:15px;text-align:center;background:var(--surface-2)}
+.fxlabel{font-style:italic;font-family:Georgia,serif;color:var(--ink-soft);padding:0 4px}
+#fx{flex:1;font:inherit;font-size:16px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);min-width:0}
+.grid-wrap{overflow:auto;background:#fff}
+.grid{border-collapse:collapse;font-family:Calibri,Carlito,"Segoe UI",Arial,sans-serif;font-size:16px;color:#1a1a1a;min-width:100%}
+.grid th{background:#f0f0f0;color:#444;font-weight:400;font-size:14px;border:1px solid #d4d4d4;padding:4px 8px;min-width:38px}
+.grid th.hl{background:#d3e8dc;color:#145a32;font-weight:700}
+.grid td{border:1px solid #d4d4d4;padding:0;min-width:118px;height:34px}
+.cell{width:100%;height:34px;border:0;padding:0 8px;font:inherit;background:transparent;color:#1a1a1a;outline:none;cursor:cell;border-radius:0}
+.cell:focus{box-shadow:inset 0 0 0 2px #217346;background:#fff;cursor:text}
+.cell.num{text-align:right}.cell.err{color:#c00;text-align:center;font-weight:700}
+.cell.editing{text-align:left}
+.cell.fml:not(:focus){background:#f2faf5}
+.x-legend{font-size:14.5px;color:var(--ink-soft);padding:10px 14px;background:var(--surface);border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px 16px}
+.good-to-know{margin-top:16px}
+.good-to-know p{font-size:16px;margin:0 0 .6em}
+
+/* Hinweise */
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));translate:-50% 20px;opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:12px;font-weight:700;z-index:60;transition:opacity .25s,translate .25s;max-width:92vw;text-align:center}
+.toast.show{opacity:1;translate:-50% 0}
+.modal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:20px;background:rgba(8,12,22,.5)}
+.modal-card{background:var(--surface);border-radius:22px;padding:28px;max-width:520px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);animation:appear .2s ease-out}
+.modal-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.res-stars{font-size:54px;color:var(--gold);letter-spacing:6px;line-height:1;margin-bottom:10px}.res-stars i{font-style:normal;color:var(--line)}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}
+.res-grid div{background:var(--surface-2);border-radius:12px;padding:10px 6px}
+.res-grid span{display:block;font-size:13px;color:var(--ink-soft);font-weight:700}
+.res-grid b{font:800 24px "Bricolage Grotesque",sans-serif}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--ink-soft);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.linkbtn{font:inherit;font-size:15px;background:none;border:0;color:var(--ink-soft);text-decoration:underline;cursor:pointer;padding:6px 0}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Datei-Explorer */
+.explorer{outline:none}
+.explorer .o-title{background:#33415c}
+.mail .o-title{background:#0e7490}
+.x-toolbar{display:flex;flex-wrap:wrap;gap:4px;padding:8px 10px;background:var(--surface);border-bottom:1px solid var(--line)}
+.tb{font:inherit;font-size:14px;display:inline-flex;align-items:center;gap:5px;padding:7px 9px;border:1px solid transparent;background:transparent;color:var(--ink);border-radius:8px;cursor:pointer}
+.tb:hover:not(:disabled){background:var(--accent-soft);border-color:var(--accent)}
+.tb:disabled{opacity:.38;cursor:default}
+.x-addr,.b-bar{display:flex;gap:6px;align-items:center;padding:8px 10px;background:var(--surface-2);border-bottom:1px solid var(--line)}
+.navbtn{font:inherit;font-size:18px;width:36px;height:36px;flex:0 0 36px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.navbtn:hover:not(:disabled){background:var(--accent-soft);border-color:var(--accent)}
+.navbtn:disabled{opacity:.35;cursor:default}
+.crumbs{flex:1;display:flex;align-items:center;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:3px 6px;min-width:0;overflow-x:auto;scrollbar-width:none}
+.crumbs button{font:inherit;font-size:15px;border:0;background:none;color:var(--ink);padding:4px 7px;border-radius:6px;cursor:pointer;white-space:nowrap}
+.crumbs button:hover{background:var(--accent-soft)}
+.crumbs .sep{color:var(--ink-soft)}
+.x-search{width:190px;font:inherit;font-size:15px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0}
+.x-body{display:grid;grid-template-columns:170px 1fr;min-height:380px;background:var(--surface)}
+.x-nav{border-right:1px solid var(--line);padding:8px;display:flex;flex-direction:column;gap:2px}
+.x-nav button{font:inherit;font-size:15px;text-align:left;border:0;background:none;color:var(--ink);padding:8px 10px;border-radius:8px;cursor:pointer;white-space:nowrap}
+.x-nav button:hover{background:var(--surface-2)}
+.x-nav button.on{background:var(--accent-soft);font-weight:700}
+.x-nav hr{border:0;border-top:1px solid var(--line);margin:6px 2px}
+.x-items{padding:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(126px,1fr));align-content:start;gap:6px;user-select:none;-webkit-user-select:none}
+.xi{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;border-radius:8px;border:1px solid transparent;text-align:center}
+.xi:hover{background:var(--surface-2)}
+.xi.sel{background:var(--accent-soft);border-color:var(--accent)}
+.xi.cut{opacity:.45}
+.xe{font-size:42px;line-height:1;pointer-events:none}
+.xn{font-size:13px;line-height:1.25;overflow-wrap:anywhere;pointer-events:none}
+.xloc{font-size:12px;color:var(--ink-soft);pointer-events:none}
+.xi input{width:100%;font:inherit;font-size:13.5px;padding:3px 4px;border:2px solid var(--accent);border-radius:4px;text-align:center;background:var(--surface);color:var(--ink);user-select:text;-webkit-user-select:text}
+.drop-hot{outline:2px dashed var(--accent)!important;outline-offset:-2px;background:var(--accent-soft)!important}
+.x-empty{grid-column:1/-1;color:var(--ink-soft);text-align:center;padding:50px 10px}
+.x-status{padding:6px 12px;font-size:13.5px;color:var(--ink-soft);border-top:1px solid var(--line);background:var(--surface)}
+.drag-ghost{position:fixed;z-index:80;pointer-events:none;background:var(--surface);color:var(--ink);border:1px solid var(--accent);border-radius:8px;padding:6px 10px;font-size:14px;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.ctx.fixed{position:fixed;z-index:80}
+.ctx button:disabled{opacity:.4;cursor:default;background:none}
+.save-demo{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:16px}
+.save-demo div{max-width:36em;font-size:16.5px}
+@media (max-width:680px){.x-body{grid-template-columns:1fr}.x-nav{flex-direction:row;flex-wrap:wrap;border-right:0;border-bottom:1px solid var(--line)}.x-nav hr{display:none}.x-search{width:110px}}
+
+/* Speichern unter */
+.sd-card{background:var(--surface);border-radius:14px;max-width:720px;width:100%;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35);animation:appear .2s ease-out}
+.sd-head{padding:12px 16px;font-weight:700;border-bottom:1px solid var(--line);background:var(--surface-2)}
+.sd-crumbwrap{display:flex;padding:8px 10px;border-bottom:1px solid var(--line)}
+.sd-body{display:grid;grid-template-columns:160px 1fr;height:250px}
+.sd-list{overflow:auto;padding:6px}
+.sd-row{display:flex;align-items:center;gap:10px;width:100%;font:inherit;font-size:15px;text-align:left;border:1px solid transparent;background:none;color:var(--ink);padding:7px 10px;border-radius:7px;cursor:default}
+.sd-row:hover{background:var(--surface-2)}
+.sd-row.sel{background:var(--accent-soft);border-color:var(--accent)}
+.sd-row.file{color:var(--ink-soft)}
+.att-pick{display:grid;gap:4px;margin-top:10px;text-align:left;max-height:320px;overflow:auto}
+.att-pick .sd-row{cursor:pointer}
+.sd-foot{padding:12px 16px;border-top:1px solid var(--line);display:grid;gap:10px}
+.sd-foot label{display:grid;grid-template-columns:100px 1fr;align-items:center;gap:10px;font-size:15px}
+.sd-foot input{font:inherit;font-size:16px;padding:8px 10px;border:2px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.sd-foot input:focus{border-color:var(--accent);outline:none}
+.sd-tip{margin:0;font-size:14.5px;color:var(--ink-soft)}
+.sd-actions{display:flex;justify-content:flex-end;gap:10px}
+@media (max-width:600px){.sd-body{grid-template-columns:1fr;height:auto}.sd-body .x-nav{flex-direction:row;flex-wrap:wrap;border-right:0}.sd-list{max-height:200px}}
+
+/* Browser */
+.browser{position:relative}
+.b-tabs{display:flex;gap:4px;padding:8px 10px 0;background:#33415c}
+.b-tab{padding:7px 16px;border-radius:9px 9px 0 0;font-size:14px;background:var(--surface-2);color:var(--ink);max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.b-url{flex:1;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:5px 14px;min-width:0}
+.b-url input{flex:1;border:0;background:transparent;font:inherit;font-size:15px;color:var(--ink);outline:none;min-width:0}
+.b-url:focus-within{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.b-page{background:#fff;color:#1f2328;min-height:420px;padding:26px 30px 40px;font-family:Arial,Helvetica,sans-serif;font-size:16px}
+.b-status{position:absolute;left:0;bottom:0;background:#eef0f3;color:#333;border:1px solid #cfd4db;border-left:0;border-bottom:0;border-radius:0 7px 0 0;padding:3px 10px;font-size:13px;max-width:90%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:Arial,sans-serif}
+.b-home{display:grid;place-items:center;gap:18px;padding-top:56px;text-align:center}
+.b-logo{font:800 46px "Bricolage Grotesque",sans-serif;color:#2447d6;letter-spacing:-.02em}
+.b-search{display:flex;gap:8px;width:min(520px,100%)}
+.b-search input{flex:1;font:inherit;font-size:17px;padding:11px 18px;border:1px solid #c8ccd2;border-radius:99px;outline:none;min-width:0;background:#fff;color:#1f2328}
+.b-search input:focus{border-color:#2447d6;box-shadow:0 0 0 3px #e1e7ff}
+.b-search button{font:inherit;font-size:16px;padding:0 18px;border:0;border-radius:99px;background:#2447d6;color:#fff;cursor:pointer}
+.b-hint{color:#4d5156;font-size:14px;margin:0}
+.b-rtop{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:24px}
+.b-rtop .b-logo{font-size:28px}
+.b-res{margin-bottom:22px;max-width:620px}
+.b-rurl{font-size:13.5px;color:#4d5156;display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.b-ad{font-weight:700;font-size:12.5px;color:#1f2328;border:1px solid #1f2328;border-radius:4px;padding:0 5px}
+.b-link{font:inherit;font-size:19px;color:#1a0dab;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.b-link:hover{text-decoration:underline}
+.b-res p{margin:3px 0 0;color:#4d5156;font-size:14.5px}
+.b-site h2{font-family:Arial,Helvetica,sans-serif;color:#1f2328;font-size:26px;letter-spacing:0}
+.b-site .note{background:#fff7d6;border:1px solid #f0d77a;border-radius:8px;padding:12px 14px;margin-top:16px;font-size:15px}
+.b-site.adpage{text-align:center;padding-top:20px;max-width:560px;margin:0 auto}
+.url-quiz{margin-top:16px}
+.uq-opts{display:grid;gap:8px;margin:12px 0}
+.uq-opt{font:600 15.5px "Atkinson Hyperlegible Mono",ui-monospace,monospace;text-align:left;padding:12px 14px;border:2px solid var(--line);border-radius:10px;background:var(--surface-2);color:var(--ink);cursor:pointer;word-break:break-all}
+.uq-opt:hover{border-color:var(--accent)}
+.uq-opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.uq-opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.uq-msg{font-weight:700;min-height:1.4em}
+.uq-msg.ok{color:var(--ok)}.uq-msg.bad{color:var(--bad)}
+.small{font-size:14.5px}
+
+/* E-Mail */
+.m-body{display:grid;grid-template-columns:minmax(200px,250px) 1fr;grid-template-rows:auto 1fr;min-height:470px;background:var(--surface)}
+.m-body #mFolders{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;align-items:center;border-right:0;border-bottom:1px solid var(--line)}
+.x-nav .m-new{margin-right:8px;font-size:15px;min-height:42px;padding:8px 14px;background:var(--accent);color:var(--accent-ink);font-weight:700;border-radius:10px;box-shadow:0 3px 0 var(--accent-edge)}
+.x-nav .m-new:hover{background:var(--accent);filter:brightness(1.08)}
+.m-list{border-right:1px solid var(--line);overflow:auto;max-height:600px}
+.m-item{display:block;width:100%;font:inherit;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink);padding:10px 12px;cursor:pointer}
+.m-item:hover{background:var(--surface-2)}
+.m-item.on{background:var(--accent-soft)}
+.m-item .mf{display:flex;justify-content:space-between;gap:8px;font-size:14.5px}
+.m-item .mf b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.m-item:not(.unread) .mf b{font-weight:400}
+.m-item.unread .mf b::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:6px;vertical-align:middle}
+.m-item .ms{font-size:14px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.m-item.unread .ms{color:var(--ink);font-weight:700}
+.m-item .md{font-size:12.5px;color:var(--ink-soft);white-space:nowrap}
+.m-read{padding:16px 20px;overflow:auto;min-width:0}
+.m-empty{color:var(--ink-soft);display:grid;place-items:center;min-height:280px;text-align:center;padding:10px}
+.mv-tools{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.mv-tools .tb{border-color:var(--line)}
+.mv-from{font-size:15.5px}
+.mv-addr{font-family:"Atkinson Hyperlegible Mono",ui-monospace,monospace;font-size:14px;background:var(--surface-2);padding:1px 6px;border-radius:5px;word-break:break-all}
+.mv-meta{font-size:13.5px;color:var(--ink-soft);margin:2px 0 14px}
+.mv-body{font-size:16px;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.mv-link{font:inherit;font-weight:700;margin:14px 0;padding:10px 18px;border:0;border-radius:6px;background:#c0392b;color:#fff;cursor:pointer}
+.mv-att{display:inline-flex;gap:6px;align-items:center;margin:10px 8px 0 0;padding:6px 10px;border:1px solid var(--line);border-radius:8px;font-size:14.5px;background:var(--surface-2)}
+.mv-status{margin-top:16px;font-size:14.5px;min-height:1.4em;color:var(--ink-soft)}
+.mv-status b{color:var(--bad);word-break:break-all}
+.cmp{display:grid;gap:10px}
+.cmp h3{margin:0}
+.cmp label{display:grid;grid-template-columns:72px 1fr;align-items:center;gap:8px;font-size:15px;font-weight:700}
+.cmp input,.cmp textarea{font:inherit;font-size:16px;padding:8px 10px;border:2px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);width:100%}
+.cmp textarea{min-height:200px;resize:vertical}
+.cmp input:focus,.cmp textarea:focus{border-color:var(--accent);outline:none}
+.cmp-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.cmp-tools .grow{flex:1}
+.att-x{font:inherit;border:0;background:none;color:var(--ink-soft);cursor:pointer;padding:0 2px}
+.net-reset{margin-top:10px}
+@media (max-width:700px){.m-body{grid-template-columns:1fr}.m-list{border-right:0;border-bottom:1px solid var(--line);max-height:260px}}
+
+/* Persönlich */
+.letter{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--f-pinky);border-radius:14px;padding:14px 16px;max-width:34em;font-size:17.5px;margin-top:22px}
+.letter .l-emo{font-size:26px;line-height:1}
+.today{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pill{background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-weight:700;font-size:15px}
+.pill.ok{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.caps-art.long .cap{width:clamp(38px,5vw,60px);font-size:clamp(19px,2.5vw,30px);border-radius:12px}
+.uk-teaser{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:-20px 0 44px}
+.split.rev{grid-template-columns:1fr minmax(270px,360px)}
+@media (max-width:940px){.split.rev{grid-template-columns:1fr}}
+.me-form{display:grid;gap:14px}
+.me-form label{display:grid;gap:4px;font-weight:700;font-size:16px}
+.me-form small{font-weight:400;color:var(--ink-soft);font-size:14px}
+.me-form input,.me-form textarea{font:inherit;font-size:17px;padding:10px 12px;border:2px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);width:100%}
+.me-form input:focus,.me-form textarea:focus{border-color:var(--accent);outline:none}
+.me-form textarea{resize:vertical;min-height:84px}
+.me-actions{display:flex;gap:10px;flex-wrap:wrap}
+.preview-list{list-style:none;padding:0;margin:8px 0 16px;display:grid;gap:6px}
+.preview-list li{background:var(--surface-2);border-radius:10px;padding:8px 12px;font-family:"Atkinson Hyperlegible Mono",ui-monospace,monospace;font-size:15px}
+.warnline{background:var(--bad-soft);color:var(--bad);border-radius:10px;padding:8px 12px;font-size:14.5px;font-weight:700}
+/* Urkunde */
+.urkunde{max-width:880px;margin:0 auto;background:#fffdf7;color:#1c2333;border:2px solid #1c2333;padding:14px;position:relative;overflow:hidden}
+.uk-inner{border:6px double #c99a2e;padding:44px 40px 36px;text-align:center}
+.uk-top{font-weight:700;color:#8a6a1f;font-size:17px}
+.uk-title{font:800 clamp(52px,8vw,88px)/1 "Bricolage Grotesque",sans-serif;margin:8px 0 4px;color:#1c2333}
+.uk-for{margin:0;color:#5a6070;font-size:18px}
+.uk-name{font:800 clamp(38px,6vw,64px)/1.1 "Bricolage Grotesque",sans-serif;color:#2447d6;margin:6px 0 14px}
+.uk-text{font-size:18px;margin:0}
+.uk-list{list-style:none;padding:0;margin:14px auto 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 18px;max-width:640px;text-align:left;font-size:17px}
+.uk-list li{color:#9196a3}.uk-list li.ok{color:#1c2333;font-weight:700}
+.uk-foot{display:flex;justify-content:space-between;gap:36px;margin-top:16px;text-align:center}
+.uk-foot>div{flex:1}
+.uk-line{border-bottom:1.5px solid #1c2333;padding:0 0 6px;height:52px;font-size:18px;display:flex;align-items:flex-end;justify-content:center}
+.uk-line.sig{font-family:"Segoe Script","Brush Script MT","Snell Roundhand",cursive;font-size:28px}
+.uk-foot small{color:#5a6070}
+.uk-stamp{position:absolute;top:30px;right:-46px;transform:rotate(32deg);background:#d1243f;color:#fff;font-weight:700;padding:6px 56px;font-size:14px}
+@media (max-width:600px){.uk-inner{padding:28px 16px}.uk-foot{flex-direction:column;gap:18px}}
+@media print{
+  body.print-uk{background:#fff}
+  body.print-uk .top,body.print-uk footer,body.print-uk .toast,body.print-uk .modal,body.print-uk .touch-note,body.print-uk main > section:not(#r-urkunde),body.print-uk #r-urkunde .sec-head{display:none!important}
+  body.print-uk main{padding:0}
+  body.print-uk .urkunde{max-width:none;margin:0}
+  @page{size:A4 landscape;margin:10mm}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap topbar">
+    <a class="brand" href="#start"><span class="logo" id="brandLogo">H</span><span id="brandName">Harrys PC-Werkstatt</span></a>
+    <nav class="nav" aria-label="Bereiche">
+      <a href="#start">🏠 Start</a>
+      <a href="#tippen">⌨️ Tippen</a>
+      <a href="#maus">🖱️ Maus</a>
+      <a href="#kuerzel">⚡ Tastenkürzel</a>
+      <a href="#word">📝 Word</a>
+      <a href="#excel">📊 Excel</a>
+      <a href="#dateien">📁 Dateien</a>
+      <a href="#netz">🌐 Internet</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="touch-note">📱 Diese Übungen sind für einen Computer mit Tastatur und Maus gemacht. Am Handy funktioniert vieles nur eingeschränkt.</p>
+
+  <!-- START -->
+  <section id="r-start">
+    <div class="hero">
+      <div>
+        <h1 id="hello">Servus Harry!</h1>
+        <p class="lead">Hier lernst du den Computer Schritt für Schritt – in deinem Tempo. Du kannst nichts kaputt machen und jede Übung so oft wiederholen, wie du willst.</p>
+        <div class="hero-actions">
+          <a class="btn big" href="#tippen" id="contBtn">Mit Schritt 1 anfangen</a>
+          <a class="btn ghost" href="#ich">⚙️ Persönlich machen</a>
+          <div class="total"><span>Geschafft:</span><div class="bar"><i id="totalBar"></i></div><b id="totalPct">0 %</b></div>
+        </div>
+        <div class="letter" id="letter" hidden></div>
+        <div class="today" id="todayBox"></div>
+      </div>
+      <div class="caps-art" id="capsArt" aria-hidden="true"></div>
+    </div>
+
+    <h2>Dein Weg in sieben Schritten</h2>
+    <div class="steps">
+      <a class="step" href="#tippen" data-step="tippen"><div class="step-top"><span class="stepcap">1</span><span class="step-emo">⌨️</span></div><b>Tippen mit 10 Fingern</b><p>Spielerisch die Tastatur lernen, bis die Finger von allein wissen, wohin.</p><div class="bar"><i></i></div><span class="step-prog"></span></a>
+      <a class="step" href="#maus" data-step="maus"><div class="step-top"><span class="stepcap">2</span><span class="step-emo">🖱️</span></div><b>Die Maus</b><p>Klicken, Doppelklick, Rechtsklick und Dateien verschieben.</p><div class="bar"><i></i></div><span class="step-prog"></span></a>
+      <a class="step" href="#kuerzel" data-step="kuerzel"><div class="step-top"><span class="stepcap">3</span><span class="step-emo">⚡</span></div><b>Tastenkürzel</b><p>Kopieren, Einfügen, Rückgängig – die Abkürzungen, die überall funktionieren.</p><div class="bar"><i></i></div><span class="step-prog"></span></a>
+      <a class="step" href="#word" data-step="word"><div class="step-top"><span class="stepcap">4</span><span class="step-emo">📝</span></div><b>Word-Grundlagen</b><p>Einen Text gestalten: fett, größer, zentriert, kursiv.</p><div class="bar"><i></i></div><span class="step-prog"></span></a>
+      <a class="step" href="#excel" data-step="excel"><div class="step-top"><span class="stepcap">5</span><span class="step-emo">📊</span></div><b>Excel-Grundlagen</b><p>Zellen, erste Formeln und die Summe – an einer echten Einkaufsliste.</p><div class="bar"><i></i></div><span class="step-prog"></span></a>
+      <a class="step" href="#dateien" data-step="dateien"><div class="step-top"><span class="stepcap">6</span><span class="step-emo">📁</span></div><b>Dateien &amp; Ordner</b><p>Ordnung halten: anlegen, umbenennen, verschieben, löschen und gezielt speichern.</p><div class="bar"><i></i></div><span class="step-prog"></span></a>
+      <a class="step" href="#netz" data-step="netz"><div class="step-top"><span class="stepcap">7</span><span class="step-emo">🌐</span></div><b>Internet &amp; E-Mail</b><p>Suchen, Werbung erkennen, Mails schreiben und Betrug durchschauen.</p><div class="bar"><i></i></div><span class="step-prog"></span></a>
+    </div>
+
+    <div class="panel uk-teaser"><div><b>🏆 Am Ende wartet eine Urkunde.</b> <span id="ukTeaser" class="muted"></span></div><a class="btn ghost" href="#urkunde">Urkunde ansehen</a></div>
+
+    <h2>So klappt es am besten</h2>
+    <div class="tips">
+      <div class="tip"><span>🐢</span><p><b>Genau vor schnell.</b> Wer sauber tippt, wird mit der Zeit automatisch schneller.</p></div>
+      <div class="tip"><span>👀</span><p><b>Auf den Bildschirm schauen,</b> nicht auf die Tasten. Die Farben der Bildschirm-Tastatur helfen dir dabei.</p></div>
+      <div class="tip"><span>⏱️</span><p><b>Lieber kurz und oft:</b> jeden Tag 10 bis 15 Minuten statt einmal pro Woche zwei Stunden.</p></div>
+      <div class="tip"><span>💾</span><p><b>Dein Fortschritt bleibt gespeichert</b> – in diesem Browser auf diesem Computer.</p></div>
+    </div>
+  </section>
+
+  <!-- TIPPEN -->
+  <section id="r-tippen" hidden>
+    <div class="sec-head">
+      <div>
+        <h2><span class="stepcap">1</span>Tippen mit 10 Fingern</h2>
+        <p>Jeder Finger hat seine eigenen Tasten. Die Farben zeigen dir, welcher Finger wohin gehört.</p>
+      </div>
+      <div class="seg" role="tablist" aria-label="Übungsart">
+        <button class="seg-b on" data-sub="lektion" role="tab">Lektionen</button>
+        <button class="seg-b" data-sub="spiel" role="tab">🎮 Buchstabenregen</button>
+      </div>
+    </div>
+
+    <div id="sub-lektion">
+      <div class="lessons" id="lessons"></div>
+      <div class="panel" id="trainer">
+        <div class="trainer-head">
+          <div><h3 id="lTitle"></h3><p id="lDesc" class="muted"></p></div>
+          <button class="btn ghost" id="lRestart">Neuer Text</button>
+        </div>
+        <div class="stats">
+          <div><span>Fortschritt</span><b id="stProg">0 %</b></div>
+          <div><span>Fehler</span><b id="stErr">0</b></div>
+          <div><span>Anschläge pro Minute</span><b id="stApm">–</b></div>
+        </div>
+        <div class="startbox" id="startBox">
+          <div>
+            <div class="ov-emoji">🙌</div>
+            <p class="ov-title">Hände in die Grundstellung</p>
+            <p>Linke Finger auf <kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><kbd>F</kbd>, rechte auf <kbd>J</kbd><kbd>K</kbd><kbd>L</kbd><kbd>Ö</kbd>.<br>Auf <kbd>F</kbd> und <kbd>J</kbd> spürst du eine kleine Erhebung.</p>
+            <p class="ov-go">Drücke die <kbd>Leertaste</kbd>, um zu starten</p>
+          </div>
+        </div>
+        <div class="textline" id="textline" hidden></div>
+        <p class="caps-warn" id="capsWarn" hidden>⚠️ Die Feststelltaste ⇪ ist eingeschaltet. Bitte einmal drücken, um sie auszuschalten.</p>
+        <p class="finger-hint" id="fingerHint"></p>
+        <div class="kb" id="kbType"></div>
+        <div class="kb-legend"><span><i class="f-pinky"></i>kleiner Finger</span><span><i class="f-ring"></i>Ringfinger</span><span><i class="f-middle"></i>Mittelfinger</span><span><i class="f-index"></i>Zeigefinger</span><span><i class="f-thumb"></i>Daumen</span></div>
+        <div id="handsType"></div>
+      </div>
+    </div>
+
+    <div id="sub-spiel" hidden>
+      <div class="panel">
+        <div class="game-bar">
+          <label>Buchstaben:
+            <select id="rainSet">
+              <option value="asdfghjklö">Nur Grundreihe</option>
+              <option value="asdfghjklöeiruqwtzopü">Grundreihe und obere Reihe</option>
+              <option value="abcdefghijklmnopqrstuvwxyzäöü">Alle Buchstaben</option>
+            </select>
+          </label>
+          <div class="hud"><span>Punkte <b id="gScore">0</b></span><span id="gLives" aria-label="Leben">❤️❤️❤️</span><span>Rekord <b id="gHigh">0</b></span></div>
+        </div>
+        <div class="rain" id="rain">
+          <div class="ground"></div>
+          <div class="overlay" id="rainOverlay">
+            <div>
+              <div class="ov-emoji">🌧️</div>
+              <p class="ov-title" id="rainTitle">Buchstabenregen</p>
+              <p id="rainText">Buchstaben fallen vom Himmel. Tippe jeden, bevor er den Boden berührt! Die Farbe zeigt dir den richtigen Finger. Drei Leben hast du.</p>
+              <button class="btn" id="gStart">Spiel starten</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAUS -->
+  <section id="r-maus" hidden>
+    <div class="sec-head">
+      <div>
+        <h2><span class="stepcap">2</span>Die Maus sicher bedienen</h2>
+        <p>Vier kurze Übungen – am besten der Reihe nach von links nach rechts.</p>
+      </div>
+    </div>
+    <div class="mtabs" id="mouseTabs"></div>
+    <div class="panel">
+      <div class="mhud"><p id="mIntro" class="muted">Wähle oben eine Übung aus.</p><span class="mcount" id="mCount"></span></div>
+      <div class="arena" id="arena">
+        <div class="arena-empty"><div><div class="ov-emoji">👆</div><p class="ov-title">Wähle oben eine Übung</p><p>Klicke dazu einmal mit der linken Maustaste auf „Klicken“.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TASTENKÜRZEL -->
+  <section id="r-kuerzel" hidden>
+    <div class="sec-head">
+      <div>
+        <h2><span class="stepcap">3</span>Tastenkürzel</h2>
+        <p>Statt mit der Maus durch Menüs zu klicken, drückst du zwei Tasten. Halte <kbd>Strg</kbd> (links unten) gedrückt und tippe dann kurz den Buchstaben. Diese Kürzel funktionieren in Word, Excel, im Browser und fast überall in Windows.</p>
+      </div>
+    </div>
+    <div class="panel quiz">
+      <div id="quizStart">
+        <p class="ov-title">Quiz: Kennst du die Kürzel?</p>
+        <p id="quizStartText" class="muted">Hier steht gleich eine Aufgabe, zum Beispiel „Kopieren“. Du drückst die passende Tastenkombination auf deiner echten Tastatur.</p>
+        <button class="btn" id="qStart">Quiz starten</button>
+      </div>
+      <div id="quizRun" hidden>
+        <p class="q-label">Drücke die Tastenkombination für:</p>
+        <p class="q-name" id="qName"></p>
+        <p class="q-msg" id="qMsg"></p>
+        <div class="q-actions"><button class="btn ghost" id="qHint">💡 Tipp zeigen</button><button class="btn ghost" id="qSkip">Überspringen</button></div>
+        <p class="q-prog" id="qProg"></p>
+      </div>
+      <div class="kb mini" id="kbQuiz"></div>
+    </div>
+    <h3>Die wichtigsten Kürzel</h3>
+    <div class="sc-grid" id="scGrid"></div>
+    <div class="panel">
+      <h3>Diese probierst du direkt am PC aus</h3>
+      <p class="muted">Windows fängt sie ab, bevor sie diese Seite erreichen. Deshalb kann man sie hier nicht abfragen.</p>
+      <div class="win-list">
+        <div><kbd>Alt</kbd>+<kbd>Tab</kbd><br>Zwischen offenen Fenstern wechseln. Alt gedrückt halten und Tab mehrmals tippen.</div>
+        <div><kbd>⊞ Windows</kbd>+<kbd>E</kbd><br>Den Datei-Explorer öffnen, also deine Ordner und Dateien.</div>
+        <div><kbd>⊞ Windows</kbd>+<kbd>D</kbd><br>Alle Fenster weg, der Desktop erscheint. Nochmal drücken holt sie zurück.</div>
+        <div><kbd>⊞ Windows</kbd>+<kbd>L</kbd><br>Den PC sperren, wenn du kurz weggehst.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORD -->
+  <section id="r-word" hidden>
+    <div class="sec-head">
+      <div>
+        <h2><span class="stepcap">4</span>Word: Texte gestalten</h2>
+        <p>Rechts ist ein kleines Übungs-Word. Die Knöpfe sehen aus und heißen wie im echten Word. Die Aufgaben links haken sich von selbst ab.</p>
+      </div>
+    </div>
+    <div class="split">
+      <aside class="panel" id="wordTasks"></aside>
+      <div class="office word">
+        <div class="o-title"><span>Einladung.docx – Word (Übung)</span><button class="o-reset" id="wReset">Von vorne beginnen</button></div>
+        <div class="ribbon">
+          <div class="rtabs"><span class="rtab">Datei</span><span class="rtab on">Start</span><span class="rtab">Einfügen</span><span class="rtab">Layout</span></div>
+          <div class="rgroups">
+            <div class="rgroup"><div class="rbtns"><button class="rb" data-cmd="undo" title="Rückgängig (Strg+Z)">↶</button><button class="rb" data-cmd="redo" title="Wiederholen (Strg+Y)">↷</button></div><small>Rückgängig</small></div>
+            <div class="rgroup">
+              <div class="rbtns"><button class="rb b" data-cmd="bold" title="Fett">F</button><button class="rb i" data-cmd="italic" title="Kursiv">K</button><button class="rb u" data-cmd="underline" title="Unterstrichen">U</button></div>
+              <div class="rbtns"><span>Größe</span><button class="rb sz" data-cmd="size" data-v="11">11</button><button class="rb sz" data-cmd="size" data-v="14">14</button><button class="rb sz" data-cmd="size" data-v="18">18</button><button class="rb sz" data-cmd="size" data-v="24">24</button><button class="rb sz" data-cmd="size" data-v="36">36</button></div>
+              <small>Schriftart</small>
+            </div>
+            <div class="rgroup">
+              <div class="rbtns">
+                <button class="rb" data-cmd="justifyLeft" title="Linksbündig"><svg viewBox="0 0 20 20"><path d="M3 5h14M3 9h9M3 13h14M3 17h9"/></svg></button>
+                <button class="rb" data-cmd="justifyCenter" title="Zentriert"><svg viewBox="0 0 20 20"><path d="M3 5h14M5.5 9h9M3 13h14M5.5 17h9"/></svg></button>
+                <button class="rb" data-cmd="justifyRight" title="Rechtsbündig"><svg viewBox="0 0 20 20"><path d="M3 5h14M8 9h9M3 13h14M8 17h9"/></svg></button>
+                <button class="rb" data-cmd="insertUnorderedList" title="Aufzählungszeichen"><svg viewBox="0 0 20 20"><circle cx="3.5" cy="5" r="1.4"/><circle cx="3.5" cy="10" r="1.4"/><circle cx="3.5" cy="15" r="1.4"/><path d="M7.5 5h9.5M7.5 10h9.5M7.5 15h9.5"/></svg></button>
+              </div>
+              <small>Absatz</small>
+            </div>
+          </div>
+        </div>
+        <div class="paper-wrap"><div class="paper" id="editor" contenteditable="true" spellcheck="false" aria-label="Übungsdokument"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXCEL -->
+  <section id="r-excel" hidden>
+    <div class="sec-head">
+      <div>
+        <h2><span class="stepcap">5</span>Excel: Rechnen mit Tabellen</h2>
+        <p>Eine Einkaufsliste, die von selbst rechnet. Klicke in eine Zelle, tippe und bestätige mit <kbd>Enter</kbd>.</p>
+      </div>
+    </div>
+    <div class="split">
+      <aside class="panel" id="excelTasks"></aside>
+      <div>
+        <div class="office excel">
+          <div class="o-title"><span>Einkauf.xlsx – Excel (Übung)</span><button class="o-reset" id="xReset">Von vorne beginnen</button></div>
+          <div class="fxbar"><span class="namebox" id="nameBox" title="Namenfeld">A1</span><span class="fxlabel">fx</span><input id="fx" aria-label="Bearbeitungsleiste" autocomplete="off" spellcheck="false" placeholder="Klicke zuerst auf eine Zelle"></div>
+          <div class="grid-wrap"><table class="grid" id="grid"></table></div>
+          <div class="x-legend"><span><kbd>+</kbd> plus</span><span><kbd>-</kbd> minus</span><span><kbd>*</kbd> mal</span><span><kbd>/</kbd> geteilt</span><span>Kommazahlen mit Komma: 2,5</span></div>
+        </div>
+        <div class="panel good-to-know">
+          <h3>Gut zu wissen</h3>
+          <p>Oben links im <b>Namenfeld</b> steht, welche Zelle gerade ausgewählt ist. Daneben in der <b>Bearbeitungsleiste</b> (fx) siehst du die Formel, in der Zelle selbst das Ergebnis.</p>
+          <p>Zahlen stehen rechtsbündig, Text linksbündig. So erkennst du sofort, ob Excel etwas als Zahl verstanden hat.</p>
+          <p>Im deutschsprachigen Excel heißen die Funktionen deutsch (SUMME, MITTELWERT, MAX, MIN) und mehrere Angaben trennt man mit Strichpunkt: =SUMME(B2;B5).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATEIEN & ORDNER -->
+  <section id="r-dateien" hidden>
+    <div class="sec-head">
+      <div>
+        <h2><span class="stepcap">6</span>Dateien &amp; Ordner</h2>
+        <p>Ordnung auf dem Computer: Im Übungs-Explorer legst du Ordner an, benennst Dateien um, verschiebst, löschst, holst etwas zurück und speicherst gezielt.</p>
+      </div>
+    </div>
+    <div class="split">
+      <aside class="panel" id="fileTasks"></aside>
+      <div>
+        <div class="office explorer" id="explorer" tabindex="-1">
+          <div class="o-title"><span>📁 Datei-Explorer (Übung)</span><button class="o-reset" id="fReset">Von vorne beginnen</button></div>
+          <div class="x-toolbar" id="xTools">
+            <button class="tb" data-x="new">📁 Neuer Ordner</button>
+            <button class="tb" data-x="cut">✂️ Ausschneiden</button>
+            <button class="tb" data-x="copy">📑 Kopieren</button>
+            <button class="tb" data-x="paste">📋 Einfügen</button>
+            <button class="tb" data-x="rename">✏️ Umbenennen</button>
+            <button class="tb" data-x="delete">🗑️ Löschen</button>
+            <button class="tb" data-x="restore" hidden>♻️ Wiederherstellen</button>
+          </div>
+          <div class="x-addr">
+            <button class="navbtn" id="xBack" title="Zurück" aria-label="Zurück">←</button>
+            <button class="navbtn" id="xUp" title="Eine Ebene nach oben" aria-label="Eine Ebene nach oben">↑</button>
+            <div class="crumbs" id="xCrumbs"></div>
+            <input class="x-search" id="xSearch" type="search" autocomplete="off" aria-label="Suchen">
+          </div>
+          <div class="x-body">
+            <nav class="x-nav" id="xNav" aria-label="Orte">
+              <button data-id="desktop" data-drop="desktop">🖥️ Desktop</button>
+              <button data-id="dokumente" data-drop="dokumente">📄 Dokumente</button>
+              <button data-id="bilder" data-drop="bilder">🖼️ Bilder</button>
+              <button data-id="downloads" data-drop="downloads">⬇️ Downloads</button>
+              <hr>
+              <button data-id="trash" data-drop="trash">🗑️ Papierkorb</button>
+            </nav>
+            <div class="x-items" id="xItems"></div>
+          </div>
+          <div class="x-status" id="xStatus"></div>
+        </div>
+        <div class="panel save-demo">
+          <div><b>📘 Brief an die Versicherung.</b> Du hast den Brief in Word fertig geschrieben. Jetzt muss er gespeichert werden.</div>
+          <button class="btn" id="openSave">Speichern unter …</button>
+        </div>
+        <div class="panel good-to-know">
+          <h3>Gut zu wissen</h3>
+          <p>Die Endung hinter dem Punkt (.pdf, .docx, .jpg) verrät, was für eine Datei es ist. Im echten Windows ist sie oft ausgeblendet.</p>
+          <p>Diese Tasten funktionieren hier und im echten Explorer: <kbd>F2</kbd> umbenennen, <kbd>Entf</kbd> löschen, <kbd>Strg</kbd>+<kbd>X</kbd> ausschneiden, <kbd>Strg</kbd>+<kbd>C</kbd> kopieren, <kbd>Strg</kbd>+<kbd>V</kbd> einfügen. Mit der rechten Maustaste gibt es ein Menü.</p>
+          <p>Achtung bei USB-Sticks: Was man dort löscht, landet nicht im Papierkorb, sondern ist sofort weg.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNET & E-MAIL -->
+  <section id="r-netz" hidden>
+    <div class="sec-head">
+      <div>
+        <h2><span class="stepcap">7</span>Internet &amp; E-Mail</h2>
+        <p>Suchen, Werbung erkennen und E-Mails sicher nutzen. Alle Seiten und Mails hier sind erfunden, du kannst also gefahrlos alles ausprobieren.</p>
+      </div>
+      <div class="seg" id="netSeg" role="tablist" aria-label="Bereich">
+        <button class="seg-b on" data-v="web" role="tab">🌐 Internet</button>
+        <button class="seg-b" data-v="mail" role="tab">✉️ E-Mail</button>
+      </div>
+    </div>
+    <div class="split">
+      <aside class="panel"><div id="netTasks"></div><button class="linkbtn net-reset" id="netReset">Diese Übung von vorne beginnen</button></aside>
+      <div>
+        <div id="v-web">
+          <div class="office browser">
+            <div class="b-tabs"><span class="b-tab" id="bTab">Neuer Tab</span></div>
+            <div class="b-bar">
+              <button class="navbtn" id="bBack" title="Zurück" aria-label="Zurück">←</button>
+              <button class="navbtn" id="bHome" title="Startseite" aria-label="Startseite">⌂</button>
+              <div class="b-url"><span id="bLock" aria-hidden="true">🔍</span><input id="bUrl" aria-label="Adressleiste" placeholder="Suchen oder Adresse eingeben" autocomplete="off" spellcheck="false"></div>
+            </div>
+            <div class="b-page" id="bPage"></div>
+            <div class="b-status" id="bStatus" hidden></div>
+          </div>
+          <div class="panel url-quiz">
+            <h3>Welche Adresse ist echt?</h3>
+            <p class="muted">Die Musterbank hat die Adresse <b>musterbank.example</b>. Welcher dieser Links führt wirklich zu ihr?</p>
+            <div class="uq-opts" id="uqOpts"></div>
+            <p class="uq-msg" id="uqMsg"></p>
+            <p class="small muted">So prüfst du das: Lies den Teil zwischen „https://“ und dem nächsten „/“ von rechts nach links. Der echte Name steht ganz rechts. Alles, was weiter links steht, kann sich jeder ausdenken. In dieser Übung enden alle Adressen auf .example, eine Endung, die es nur für Beispiele gibt. Im echten Leben steht dort etwa .at oder .com.</p>
+          </div>
+        </div>
+        <div id="v-mail" hidden>
+          <div class="office mail">
+            <div class="o-title"><span id="mTitle">✉️ Post (Übung)</span></div>
+            <div class="m-body">
+              <div class="x-nav" id="mFolders"></div>
+              <div class="m-list" id="mList"></div>
+              <div class="m-read" id="mRead"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSÖNLICH -->
+  <section id="r-ich" hidden>
+    <div class="sec-head">
+      <div>
+        <h2>⚙️ Persönlich machen</h2>
+        <p>Trag hier ein paar Dinge ein. Sie tauchen dann in den Übungen auf: in Tipp-Sätzen, E-Mails, auf der Startseite und auf der Urkunde. Alles ist freiwillig.</p>
+      </div>
+    </div>
+    <div class="split rev">
+      <div class="panel me-form">
+        <label>Vorname<input id="meName" autocomplete="off"></label>
+        <label>Wer hat die Seite für dich gemacht?<input id="meVon" autocomplete="off"></label>
+        <label>Persönliche Nachricht auf der Startseite<textarea id="meMsg" rows="3"></textarea></label>
+        <label>Wohnort<input id="meOrt" autocomplete="off"></label>
+        <label>Hobbys <small>mit Komma trennen, zum Beispiel: Fußball, Kochen</small><input id="meHobby" autocomplete="off"></label>
+        <label>Lieblingsessen<input id="meEssen" autocomplete="off"></label>
+        <label>Wichtige Menschen <small>Vornamen, mit Komma trennen. Der erste Name schreibt dir in der E-Mail-Übung.</small><input id="meLeute" autocomplete="off"></label>
+        <label>Haustier <small>Name</small><input id="meTier" autocomplete="off"></label>
+        <div class="me-actions"><button class="btn" id="meSave">Speichern</button><a class="btn ghost" href="#start">Zur Startseite</a></div>
+      </div>
+      <aside class="panel">
+        <h3>So sieht das aus</h3>
+        <div id="mePreview"></div>
+        <p class="muted small">🔒 Diese Angaben bleiben nur in diesem Browser auf diesem Computer. Sie werden nirgendwohin geschickt.</p>
+        <p class="muted small">💡 Tipp: Das Ausfüllen ist gleich eine kleine Tippübung.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- URKUNDE -->
+  <section id="r-urkunde" hidden>
+    <div class="sec-head">
+      <div><h2>🏆 Deine Urkunde</h2><p id="ukIntro"></p></div>
+      <button class="btn" id="ukPrint">Urkunde drucken</button>
+    </div>
+    <div class="urkunde" id="urkunde"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><span id="footName">Harrys PC-Werkstatt</span>. Viel Spaß beim Üben! <a href="#ich">⚙️ Persönlich machen</a></span>
+    <button class="linkbtn" id="resetAll">Gesamten Fortschritt zurücksetzen</button>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true"><div class="modal-card"><div id="modalBody"></div><div class="modal-actions" id="modalActions"></div></div></div>
+
+<div class="modal" id="saveDlg" hidden role="dialog" aria-modal="true" aria-labelledby="sdTitle">
+  <div class="sd-card">
+    <div class="sd-head" id="sdTitle">📘 Speichern unter</div>
+    <div class="sd-crumbwrap"><div class="crumbs" id="sdCrumbs"></div></div>
+    <div class="sd-body"><div class="x-nav" id="sdNav"></div><div class="sd-list" id="sdList"></div></div>
+    <div class="sd-foot">
+      <label for="sdName">Dateiname:<input id="sdName" autocomplete="off" spellcheck="false"></label>
+      <label>Dateityp:<span>Word-Dokument (*.docx)</span></label>
+      <p class="sd-tip">💡 Doppelklick öffnet einen Ordner. Oben in der Leiste siehst du immer, WO gespeichert wird.</p>
+      <div class="sd-actions"><button class="btn ghost" id="sdCancel">Abbrechen</button><button class="btn" id="sdOk">Speichern</button></div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+'use strict';
+/* =====================================================================
+   HIER PERSÖNLICH ANPASSEN
+   Achtung: Auf GitHub Pages ist diese Datei für alle sichtbar.
+   Private Details (Hobbys, Familie, Wohnort …) deshalb lieber direkt auf
+   der Seite unter „⚙️ Persönlich machen“ eintragen. Die bleiben nur im
+   Browser auf dem eigenen Computer gespeichert.
+   ===================================================================== */
+const CONFIG={
+  name:'Harry',
+  von:'Günter',
+  nachricht:'Diese Seite habe ich für dich gebaut. Nimm dir Zeit – du kannst nichts kaputt machen.'
+};
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const rnd=a=>a[Math.floor(Math.random()*a.length)];
+
+/* ================= Speicher (nur in diesem Browser) ================= */
+const STORE='harry-pc-werkstatt-v1';
+const fresh=()=>({typing:{},rainHigh:0,mouse:{},shortcuts:{},word:{},excel:{},sheet:null,wordHtml:null,files:{},fs:null,net:{},mail:null,me:null,days:[],celebrated:{},doneDate:null});
+let P=fresh();
+try{const raw=localStorage.getItem(STORE);if(raw){const d=JSON.parse(raw);if(d&&typeof d==='object')P=Object.assign(fresh(),d);}}catch(e){}
+const dayKey=(d=new Date())=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+function save(){
+  const k=dayKey();if(!Array.isArray(P.days))P.days=[];
+  if(!P.days.includes(k)){P.days.push(k);if(P.days.length>400)P.days=P.days.slice(-400);}
+  try{localStorage.setItem(STORE,JSON.stringify(P));}catch(e){}renderDashboard();
+}
+function streak(){const set=new Set(P.days||[]);const d=new Date();if(!set.has(dayKey(d)))d.setDate(d.getDate()-1);let n=0;while(set.has(dayKey(d))){n++;d.setDate(d.getDate()-1);}return n;}
+function ME(){
+  const c=Object.assign({name:'',von:'',nachricht:'',ort:'',hobbys:'',essen:'',leute:'',tier:''},CONFIG,P.me||{});
+  const t=s=>String(s==null?'':s).trim();
+  const list=s=>t(s).split(',').map(x=>x.trim()).filter(Boolean).slice(0,6);
+  return{name:t(c.name),von:t(c.von),nachricht:t(c.nachricht),ort:t(c.ort),hobbys:list(c.hobbys),essen:t(c.essen),leute:list(c.leute),tier:t(c.tier)};
+}
+
+/* ================= Hinweis & Dialog ================= */
+let toastTimer;
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2800);}
+function modal(html,actions){
+  $('#modalBody').innerHTML=html;const box=$('#modalActions');box.innerHTML='';let focusBtn=null;
+  actions.forEach(a=>{const b=document.createElement('button');b.className='btn '+(a.cls||'');b.textContent=a.label;b.addEventListener('click',()=>{closeModal();if(a.fn)a.fn();});box.appendChild(b);if(a.focus)focusBtn=b;});
+  $('#modal').hidden=false;setTimeout(()=>{const f=focusBtn||box.lastChild;if(f)f.focus();},40);
+}
+function closeModal(){$('#modal').hidden=true;if(celebrateQ.length)setTimeout(flushCelebrate,350);}
+
+/* ================= Tastatur-Modell: QWERTZ (Österreich/Deutschland) ================= */
+const FINGER={};
+const put=(f,keys)=>keys.forEach(k=>{FINGER[k]=f;});
+put('lp',['^','1','q','a','y','<','Tab','Caps','ShiftL']);
+put('lr',['2','w','s','x']);
+put('lm',['3','e','d','c']);
+put('li',['4','5','r','t','f','g','v','b']);
+put('ri',['6','7','z','u','h','j','n','m']);
+put('rm',['8','i','k',',']);
+put('rr',['9','o','l','.']);
+put('rp',['0','ß','´','p','ü','+','ö','ä','#','-','Enter','Back','ShiftR']);
+put('th',[' ']);
+const FCLASS={lp:'pinky',rp:'pinky',lr:'ring',rr:'ring',lm:'middle',rm:'middle',li:'index',ri:'index',th:'thumb',lt:'thumb',rt:'thumb'};
+const FNAME={lp:'linken kleinen Finger',lr:'linken Ringfinger',lm:'linken Mittelfinger',li:'linken Zeigefinger',ri:'rechten Zeigefinger',rm:'rechten Mittelfinger',rr:'rechten Ringfinger',rp:'rechten kleinen Finger',th:'Daumen'};
+const SHIFTED={'!':'1','"':'2','§':'3','$':'4','%':'5','&':'6','/':'7','(':'8',')':'9','=':'0','?':'ß','`':'´','*':'+',"'":'#','>':'<',';':',',':':'.','_':'-','°':'^'};
+function keyFor(ch){
+  if(ch===' ')return{k:' ',shift:false};
+  if(SHIFTED[ch])return{k:SHIFTED[ch],shift:true};
+  const lo=ch.toLowerCase();
+  if(lo!==ch)return{k:lo,shift:true};
+  return{k:ch,shift:false};
+}
+function typeable(s){return Array.from(s).every(ch=>ch===' '||!!FINGER[keyFor(ch).k]);}
+function personalSentences(){
+  const m=ME();const s=[];
+  if(m.name)s.push(`Ich heiße ${m.name}.`);
+  if(m.ort)s.push(`Ich wohne in ${m.ort}.`);
+  m.hobbys.forEach(h=>s.push(`In meiner Freizeit mag ich ${h}.`));
+  if(m.essen)s.push(`Mein Lieblingsessen ist ${m.essen}.`);
+  m.leute.forEach(p=>s.push(`Heute schreibe ich ${p} eine Nachricht.`));
+  if(m.tier)s.push(`Mein Haustier heißt ${m.tier}.`);
+  if(m.von)s.push(`${m.von} hat diese Seite für mich gebaut.`);
+  s.push('Ich lerne jeden Tag ein bisschen mehr.');
+  return s.filter(typeable);
+}
+function personalWords(){const m=ME();return [m.name,m.ort,m.essen,m.tier,...m.hobbys,...m.leute].filter(Boolean).flatMap(w=>w.split(/\s+/)).filter(w=>w&&typeable(w));}
+function fillMe(s){const m=ME();if(s.includes('{ort}')&&!m.ort)return null;if(s.includes('{name}')&&!m.name)return null;return s.replace(/\{name\}/g,m.name).replace(/\{ort\}/g,m.ort);}
+const KB_ROWS=[
+  [['^'],['1'],['2'],['3'],['4'],['5'],['6'],['7'],['8'],['9'],['0'],['ß'],['´'],['Back','⌫',2]],
+  [['Tab','Tab ↹',1.5],['q'],['w'],['e'],['r'],['t'],['z'],['u'],['i'],['o'],['p'],['ü'],['+'],['Enter','↵',1.5]],
+  [['Caps','⇪',1.75],['a'],['s'],['d'],['f'],['g'],['h'],['j'],['k'],['l'],['ö'],['ä'],['#'],['Enter','Enter',1.25]],
+  [['ShiftL','⇧',1.25],['<'],['y'],['x'],['c'],['v'],['b'],['n'],['m'],[','],['.'],['-'],['ShiftR','⇧ Umschalt',2.75]],
+  [['CtrlL','Strg',1.25],['WinL','⊞',1.25],['AltL','Alt',1.25],[' ','Leertaste',6.25],['AltGr','Alt Gr',1.25],['WinR','⊞',1.25],['Menu','☰',1.25],['CtrlR','Strg',1.25]]
+];
+function buildKeyboard(el){
+  el.innerHTML='';const map=new Map();
+  KB_ROWS.forEach(row=>{
+    const r=document.createElement('div');r.className='kb-row';
+    row.forEach(([k,label,w])=>{
+      const key=document.createElement('div');key.className='key';
+      const f=FINGER[k];key.classList.add(f?'f-'+FCLASS[f]:'mod');
+      if(label===undefined)label=(k==='ß')?'ß':k.toUpperCase();
+      key.textContent=label;if(label.length>2)key.classList.add('small');
+      key.style.setProperty('--w',w||1);
+      if(k==='f'||k==='j')key.classList.add('bump');
+      r.appendChild(key);
+      if(!map.has(k))map.set(k,[]);map.get(k).push(key);
+    });
+    el.appendChild(r);
+  });
+  map.lit=[];
+  return map;
+}
+function highlightKeys(map,keys){
+  map.lit.forEach(el=>el.classList.remove('next'));map.lit=[];
+  keys.forEach(k=>(map.get(k)||[]).forEach(el=>{el.classList.add('next');map.lit.push(el);}));
+}
+function handsSVG(){
+  const fg=(id,x,y,h)=>`<rect class="fg c-${FCLASS[id]}" data-f="${id}" x="${x}" y="${y}" width="34" height="${h}" rx="17"/>`;
+  return `<svg class="hands" viewBox="0 0 520 198" role="img" aria-label="Zwei Hände, der Finger für die nächste Taste ist farbig markiert">
+  ${fg('lp',30,62,84)}${fg('lr',70,34,112)}${fg('lm',110,20,126)}${fg('li',150,38,108)}
+  <rect class="fg c-thumb" data-f="lt" x="183" y="104" width="34" height="72" rx="17" transform="rotate(40 200 140)"/>
+  <rect class="palm" x="26" y="112" width="160" height="66" rx="28"/>
+  ${fg('ri',336,38,108)}${fg('rm',376,20,126)}${fg('rr',416,34,112)}${fg('rp',456,62,84)}
+  <rect class="fg c-thumb" data-f="rt" x="303" y="104" width="34" height="72" rx="17" transform="rotate(-40 320 140)"/>
+  <rect class="palm" x="334" y="112" width="160" height="66" rx="28"/>
+  <text x="106" y="196">linke Hand</text><text x="414" y="196">rechte Hand</text></svg>`;
+}
+function highlightFingers(container,list){$$('.fg',container).forEach(f=>f.classList.toggle('on',list.includes(f.dataset.f)));}
+
+/* ================= Lektionen ================= */
+const R3='asdfghjklö',R4=R3+'eiru',R5=R4+'qwtzopü',R6=R5+'yxcvbnm,.-';
+const LESSONS=[
+  {id:'l1',title:'Grundstellung links',sub:'A S D F',allowed:'asdf',len:56,
+   desc:'Nur die linke Hand: kleiner Finger auf A, Ringfinger auf S, Mittelfinger auf D, Zeigefinger auf F. Die Leertaste drückst du mit dem Daumen.',
+   words:['asdf','fdsa','asdf','fdsa','aa','ss','dd','ff','as','sa','da','ad','das','dass','fass','fad','sas','dsa']},
+  {id:'l2',title:'Grundstellung rechts',sub:'J K L Ö',allowed:'jklö',len:56,
+   desc:'Jetzt die rechte Hand: Zeigefinger auf J, Mittelfinger auf K, Ringfinger auf L, kleiner Finger auf Ö.',
+   words:['jklö','ölkj','jklö','jj','kk','ll','öö','jk','kl','lö','öl','jl','kö','lkj','klö','jöl']},
+  {id:'l3',title:'Ganze Grundreihe',sub:'+ G H',allowed:R3,len:64,
+   desc:'Beide Hände zusammen. Neu sind G und H: Der Zeigefinger rutscht kurz zur Mitte und kehrt gleich wieder zurück.',
+   words:['ja','da','das','dass','als','hals','fall','falls','gas','glas','saal','aal','all','kahl','lag','fahl','sah','sag','lass','kalk','salsa','alaska','haha','ölglas','jaja','ah','ha']},
+  {id:'l4',title:'Obere Reihe, Teil 1',sub:'+ E I R U',allowed:R4,len:68,
+   desc:'Eine Reihe nach oben: E, I, R und U. Der Finger greift kurz nach oben und kehrt sofort in die Grundstellung zurück.',
+   words:['der','die','eis','reis','rad','fiel','lief','ruf','kur','hier','sieg','lied','lieder','seife','reife','leid','haus','raus','laus','lager','jahr','ehre','eile','rege','feier','fluss','alle','heiser','rauf','darf','sie','er','es','dies','gras','kreis','drei','dir','ihr','ihre','jede','jeder','frei','grau','kurs']},
+  {id:'l5',title:'Obere Reihe, Teil 2',sub:'+ Q W T Z O P Ü',allowed:R5,len:70,
+   desc:'Die restlichen Tasten oben. Für T und Z streckt sich der Zeigefinger zur Mitte, für P und Ü greift der rechte kleine Finger.',
+   words:['wo','wer','wie','was','wort','zeit','zeug','tor','rot','oft','post','papier','quiz','über','tür','zug','zahl','tag','tage','heute','wetter','toast','opa','tasse','kaffee','tee','stuhl','kopf','pause','hose','jetzt','gut','feuer','wasser','sofa','zettel','foto','pizza','spiel','fest','würfel','küste','tastatur','quelle','pfote']},
+  {id:'l6',title:'Untere Reihe',sub:'+ Y X C V B N M , . -',allowed:R6,len:72,
+   desc:'Jetzt greifen die Finger nach unten. Achtung: Y liegt bei uns links unten, Z oben in der Mitte.',
+   words:['ich','und','nicht','mit','man','von','bin','beim','mehr','nach','noch','auch','vom','box','taxi','bank','computer','maus','bildschirm','drucker','name','nummer','mail','datei','ordner','fenster','programm','internet','menü','klick','doppelklick','e-mail','x-mal','ja,','nein.','gut.','okay,','danke.','bitte,','yoga']},
+  {id:'l7',title:'Großbuchstaben',sub:'Mit der Umschalttaste ⇧',allowed:null,len:72,personal:true,
+   desc:'Für Großbuchstaben hältst du die Umschalttaste ⇧ mit dem kleinen Finger der ANDEREN Hand. Beispiel: Das H tippt die rechte Hand, also drückt der linke kleine Finger ⇧.',
+   words:['Harry','Graz','Haus','Maus','Computer','Tastatur','Bildschirm','Drucker','Kaffee','Wetter','Zeit','Post','Bank','Auto','Brief','Tisch','Stuhl','Fenster','Ordner','Datei','Hand','Finger','Taste','Wien','Linz','Sonne','der','die','das','und','mit','im','am']},
+  {id:'l8',title:'Ganze Sätze',sub:'Alles zusammen',allowed:null,
+   desc:'Jetzt kommt alles zusammen: echte Sätze mit Großbuchstaben und Satzzeichen. Lass dir Zeit!',
+   sentences:['Ich lerne jeden Tag ein bisschen mehr.','Die Maus liegt rechts neben der Tastatur.','Mit zehn Fingern tippe ich schneller.','{name} trinkt am Morgen gerne Kaffee.','Genauigkeit ist wichtiger als Tempo.','Ich speichere die Datei in meinem Ordner.','Liebe Grüße aus {ort}.','Viele Grüße an alle.','Übung macht den Meister.','Heute ist ein guter Tag zum Lernen.','Am Abend schreibe ich eine kurze E-Mail.']},
+  {id:'l9',title:'Über mich',sub:'Deine eigenen Sätze',allowed:null,about:true,
+   desc:'Sätze über dich selbst. Was hier vorkommt, stellst du auf der Startseite unter „⚙️ Persönlich machen“ ein.'}
+];
+const T={idx:undefined,lesson:null,text:'',pos:0,ok:0,err:0,t0:0,active:false,waiting:true,errAt:new Set(),spans:[]};
+let kbTypeMap,kbQuizMap;
+
+function recIdx(){const i=LESSONS.findIndex(l=>!((P.typing[l.id]||{}).stars>=1));return i<0?0:i;}
+function genText(l){
+  if(l.about)return shuffle(personalSentences()).slice(0,3).join(' ');
+  if(l.sentences)return shuffle(l.sentences.map(fillMe).filter(x=>x&&typeable(x))).slice(0,2).join(' ');
+  const allowed=l.allowed?new Set(l.allowed.split('')):null;
+  let words=l.words;if(l.personal){const pw=personalWords();words=words.concat(pw,pw);}
+  const pool=words.filter(w=>typeable(w)&&(!allowed||Array.from(w).every(c=>allowed.has(c))));
+  const out=[];let len=0,guard=0;
+  while(len<l.len&&guard++<500){const w=rnd(pool);if(pool.length>2&&out.length&&out[out.length-1]===w)continue;out.push(w);len+=w.length+1;}
+  return out.join(' ');
+}
+function renderLessons(){
+  const box=$('#lessons');box.innerHTML='';const rec=recIdx();
+  const allDone=LESSONS.every(l=>((P.typing[l.id]||{}).stars||0)>=1);
+  LESSONS.forEach((l,i)=>{
+    const st=(P.typing[l.id]||{}).stars||0;
+    const b=document.createElement('button');
+    b.className='lesson'+(T.idx===i?' on':'')+(!allDone&&i===rec&&T.idx!==i?' rec':'');
+    b.innerHTML=`<span class="l-num">${i+1}</span><span class="l-t">${esc(l.title)}</span><span class="l-sub">${esc(l.sub)}</span><span class="stars" aria-label="${st} von 3 Sternen">${'★'.repeat(st)}<i>${'★'.repeat(3-st)}</i></span>`;
+    b.addEventListener('click',()=>startLesson(i,true));
+    box.appendChild(b);
+  });
+}
+function renderText(){
+  const tl=$('#textline');tl.textContent='';
+  T.spans=Array.from(T.text,(ch,i)=>{const s=document.createElement('span');s.textContent=ch;s.className=i===0?'cur':'todo';tl.appendChild(s);return s;});
+}
+function startLesson(i,scroll){
+  T.idx=i;T.lesson=LESSONS[i];T.text=genText(T.lesson);T.pos=0;T.ok=0;T.err=0;T.t0=0;T.errAt=new Set();T.active=true;T.waiting=true;
+  $('#lTitle').textContent=`Lektion ${i+1}: ${T.lesson.title}`;
+  $('#lDesc').textContent=T.lesson.desc;
+  renderText();
+  $('#startBox').hidden=false;$('#textline').hidden=true;$('#capsWarn').hidden=true;
+  updateStats();
+  highlightKeys(kbTypeMap,[' ']);highlightFingers($('#handsType'),['lt','rt']);
+  $('#fingerHint').innerHTML='Drücke die <kbd>Leertaste</kbd> mit dem <b>Daumen</b>, um zu starten.';
+  renderLessons();
+  if(document.activeElement&&document.activeElement!==document.body)document.activeElement.blur();
+  if(scroll)$('#trainer').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function stopTyping(){T.active=false;}
+function showNext(){
+  const ch=T.text[T.pos];const hint=$('#fingerHint');
+  if(ch===undefined){hint.textContent='';highlightKeys(kbTypeMap,[]);highlightFingers($('#handsType'),[]);return;}
+  const {k,shift}=keyFor(ch);const f=FINGER[k]||'th';
+  const keys=[k];const fingers=f==='th'?['lt','rt']:[f];let extra='';
+  if(shift){const left=f[0]==='l';keys.push(left?'ShiftR':'ShiftL');fingers.push(left?'rp':'lp');extra=` und <kbd>⇧</kbd> mit dem <b>${left?'rechten':'linken'} kleinen Finger</b>`;}
+  highlightKeys(kbTypeMap,keys);highlightFingers($('#handsType'),fingers);
+  const label=ch===' '?'Leertaste':esc(ch);
+  hint.innerHTML=`Nächste Taste: <kbd>${label}</kbd> mit dem <b>${FNAME[f]}</b>${extra}`;
+}
+function updateStats(){
+  $('#stProg').textContent=Math.round(T.pos/Math.max(1,T.text.length)*100)+' %';
+  $('#stErr').textContent=T.err;
+  const mins=T.t0?(performance.now()-T.t0)/60000:0;
+  if(T.ok>2&&mins>0.05){$('#stApm').textContent=Math.round(T.ok/mins);}
+  else $('#stApm').textContent='–';
+}
+function typingKey(e){
+  if(e.ctrlKey||e.metaKey)return;
+  if(e.getModifierState)$('#capsWarn').hidden=!e.getModifierState('CapsLock');
+  if(e.key==='Tab'){e.preventDefault();return;}
+  if(!e.key||e.key.length!==1)return;
+  e.preventDefault();
+  if(T.waiting){
+    if(e.key===' '){T.waiting=false;$('#startBox').hidden=true;$('#textline').hidden=false;showNext();}
+    return;
+  }
+  if(!T.t0)T.t0=performance.now();
+  const exp=T.text[T.pos];
+  if(e.key===exp){
+    T.ok++;T.spans[T.pos].className=T.errAt.has(T.pos)?'done bad':'done';T.pos++;
+    if(T.pos>=T.text.length){updateStats();finishLesson();return;}
+    T.spans[T.pos].className='cur';showNext();
+  }else{
+    T.err++;T.errAt.add(T.pos);T.spans[T.pos].className='cur miss';
+    const tl=$('#textline');tl.classList.remove('shake');void tl.offsetWidth;tl.classList.add('shake');
+  }
+  updateStats();
+}
+function finishLesson(){
+  T.active=false;
+  const mins=Math.max((performance.now()-T.t0)/60000,1/600);
+  const apm=Math.round(T.ok/mins);
+  const acc=T.ok/Math.max(1,T.ok+T.err);
+  const stars=acc>=0.97?3:acc>=0.92?2:acc>=0.85?1:0;
+  const prev=P.typing[T.lesson.id]||{stars:0,apm:0};
+  P.typing[T.lesson.id]={stars:Math.max(prev.stars,stars),apm:Math.max(prev.apm||0,apm)};
+  save();renderLessons();
+  highlightKeys(kbTypeMap,[]);highlightFingers($('#handsType'),[]);$('#fingerHint').textContent='';
+  const nm=ME().name;const hi=nm?', '+esc(nm):'';
+  const msg=stars===3?`Ausgezeichnet${hi}! Fast fehlerfrei.`:stars===2?`Sehr gut${hi}! Nur wenige Fehler.`:stars===1?`Gut gemacht${hi}! Mit etwas Übung wird es noch genauer.`:`Ein guter Anfang${hi}! Nimm dir Zeit, Genauigkeit ist wichtiger als Tempo.`;
+  const hasNext=T.idx<LESSONS.length-1;
+  const actions=[{label:'Nochmal üben',cls:'ghost',fn:()=>startLesson(T.idx)}];
+  if(hasNext&&stars>=1)actions.push({label:'Nächste Lektion',fn:()=>startLesson(T.idx+1)});
+  if(!hasNext&&stars>=1)actions.push({label:'Zum Buchstabenregen',fn:()=>setSub('spiel')});
+  modal(`<div class="res-stars">${'★'.repeat(stars)}<i>${'★'.repeat(3-stars)}</i></div><h3>${msg}</h3>
+  <div class="res-grid"><div><span>Genauigkeit</span><b>${Math.round(acc*100)} %</b></div><div><span>Fehler</span><b>${T.err}</b></div><div><span>Anschläge/Min.</span><b>${apm}</b></div></div>
+  <p class="muted">Für einen Stern brauchst du mindestens 85 % Genauigkeit, für drei Sterne 97 %. Das Tempo kommt mit der Übung von selbst.</p>`,actions);
+}
+
+/* ================= Spiel: Buchstabenregen ================= */
+const G={running:false,drops:[],score:0,lives:3,speed:34,every:1700,spawnT:0,last:0,raf:0,set:''};
+function hud(){
+  const l=Math.max(0,G.lives);
+  $('#gScore').textContent=G.score;$('#gLives').textContent='❤️'.repeat(l)+'🤍'.repeat(3-l);$('#gHigh').textContent=P.rainHigh||0;
+}
+function startGame(){
+  const rain=$('#rain');$$('.drop',rain).forEach(d=>d.remove());
+  G.set=$('#rainSet').value;G.drops=[];G.score=0;G.lives=3;G.speed=34;G.every=1700;G.spawnT=300;G.last=performance.now();G.running=true;
+  $('#rainOverlay').hidden=true;
+  if(document.activeElement&&document.activeElement!==document.body)document.activeElement.blur();
+  hud();cancelAnimationFrame(G.raf);G.raf=requestAnimationFrame(tick);
+}
+function tick(now){
+  if(!G.running)return;
+  const rain=$('#rain');
+  const dt=Math.min(.05,(now-G.last)/1000);G.last=now;
+  G.spawnT-=dt*1000;if(G.spawnT<=0){spawnDrop();G.spawnT=G.every;}
+  const H=rain.clientHeight;
+  for(const d of G.drops.slice()){
+    d.y+=G.speed*dt;d.el.style.transform=`translate(${d.x}px,${d.y}px)`;
+    if(d.y>H-70){missDrop(d);if(!G.running)return;}
+  }
+  G.raf=requestAnimationFrame(tick);
+}
+function spawnDrop(){
+  const rain=$('#rain');const W=rain.clientWidth;
+  const ch=G.set[Math.floor(Math.random()*G.set.length)];
+  const el=document.createElement('div');el.className='drop f-'+FCLASS[FINGER[ch]];el.textContent=ch;
+  const d={ch,x:8+Math.random()*Math.max(1,W-72),y:-56,el};
+  el.style.transform=`translate(${d.x}px,${d.y}px)`;rain.appendChild(el);G.drops.push(d);
+}
+function removeDrop(d,cls){G.drops=G.drops.filter(x=>x!==d);d.el.classList.add(cls);setTimeout(()=>d.el.remove(),320);}
+function hitDrop(d){removeDrop(d,'pop');G.score++;if(G.score%5===0){G.speed+=5;G.every=Math.max(620,G.every-90);}hud();}
+function missDrop(d){removeDrop(d,'splat');G.lives--;hud();if(G.lives<=0)endGame();}
+function endGame(){
+  G.running=false;cancelAnimationFrame(G.raf);
+  const record=G.score>(P.rainHigh||0);if(record){P.rainHigh=G.score;save();}
+  hud();
+  $('#rainTitle').textContent=record?`Neuer Rekord: ${G.score} Punkte! 🏆`:`Spiel vorbei: ${G.score} Punkte`;
+  $('#rainText').textContent='Noch eine Runde? Mit jedem Spiel findest du die Tasten schneller.';
+  $('#gStart').textContent='Nochmal spielen';
+  $('#rainOverlay').hidden=false;
+}
+function stopGame(){if(G.running)endGame();}
+function gameKey(e){
+  if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(!e.key||e.key.length!==1)return;
+  e.preventDefault();
+  const ch=e.key.toLowerCase();let best=null;
+  G.drops.forEach(d=>{if(d.ch===ch&&(!best||d.y>best.y))best=d;});
+  if(best)hitDrop(best);
+  else{const r=$('#rain');r.classList.remove('wrong');void r.offsetWidth;r.classList.add('wrong');}
+}
+
+/* ================= Unterbereiche Tippen ================= */
+let sub='lektion';
+function setSub(s){
+  sub=s;
+  $$('#r-tippen .seg-b').forEach(b=>{b.classList.toggle('on',b.dataset.sub===s);b.setAttribute('aria-selected',b.dataset.sub===s);});
+  $('#sub-lektion').hidden=s!=='lektion';$('#sub-spiel').hidden=s!=='spiel';
+  if(s==='lektion'){stopGame();startLesson(T.idx??recIdx());}
+  else{stopTyping();}
+}
+
+/* ================= Maus ================= */
+const MOUSE_EX={
+  klick:{title:'Klicken',emo:'🎯',goal:10,intro:'Klicke mit der linken Maustaste auf jede Zielscheibe. Sie werden immer kleiner, so übst du genaues Zielen.'},
+  doppel:{title:'Doppelklick',emo:'📂',goal:6,intro:'Ordner und Programme öffnet man mit einem Doppelklick: zweimal schnell hintereinander klicken, ohne die Maus dabei zu bewegen.'},
+  rechts:{title:'Rechtsklick',emo:'🖱️',goal:5,intro:'Die rechte Maustaste öffnet ein Menü mit Möglichkeiten, das „Kontextmenü“. Klicke mit RECHTS auf das Symbol und wähle den gesuchten Eintrag.'},
+  ziehen:{title:'Ziehen & Ablegen',emo:'✋',goal:4,intro:'Linke Maustaste auf einer Datei gedrückt halten, zum Ordner ziehen und dort loslassen. So verschiebt man Dateien.'}
+};
+const M={ex:null,n:0,t0:0};
+const CTX=['Öffnen','Umbenennen','Kopieren','Löschen'];
+const FILES=[['📄','Brief.docx'],['📊','Kosten.xlsx'],['🖼️','Urlaub.jpg'],['📝','Notiz.txt']];
+function arena(){return $('#arena');}
+function renderMouseTabs(){
+  const box=$('#mouseTabs');box.innerHTML='';
+  Object.entries(MOUSE_EX).forEach(([k,x])=>{
+    const b=document.createElement('button');b.className='mtab'+(M.ex===k?' on':'');
+    b.innerHTML=`<span class="m-emo">${x.emo}</span><span>${esc(x.title)}</span>${P.mouse[k]?'<span class="m-ok" aria-label="erledigt">✔</span>':''}`;
+    b.addEventListener('click',()=>startMouse(k));box.appendChild(b);
+  });
+}
+function startMouse(k){
+  M.ex=k;M.n=0;M.t0=performance.now();arena().innerHTML='';
+  $('#mIntro').textContent=MOUSE_EX[k].intro;updMouse();renderMouseTabs();
+  ({klick:nextClick,doppel:nextDouble,rechts:nextRight,ziehen:setupDrag})[k]();
+}
+function updMouse(){$('#mCount').textContent=M.ex?`${M.n} / ${MOUSE_EX[M.ex].goal}`:'';}
+function randPos(w,h){const a=arena();return{x:10+Math.random()*Math.max(1,a.clientWidth-w-20),y:10+Math.random()*Math.max(1,a.clientHeight-h-70)};}
+function hintM(t){const a=arena();let h=$('.m-hint',a);if(!h){h=document.createElement('div');h.className='m-hint';a.appendChild(h);}h.textContent=t;}
+function stepM(){M.n++;updMouse();if(M.n>=MOUSE_EX[M.ex].goal){setTimeout(mouseDone,300);return true;}return false;}
+function mouseDone(){
+  const secs=((performance.now()-M.t0)/1000).toFixed(1).replace('.',',');
+  P.mouse[M.ex]=true;save();renderMouseTabs();
+  const keys=Object.keys(MOUSE_EX);const nextK=keys[keys.indexOf(M.ex)+1];
+  arena().innerHTML=`<div class="m-done"><div><div class="ov-emoji">🎉</div><p class="ov-title">Geschafft in ${secs} Sekunden!</p><div class="q-actions"><button class="btn ghost" id="mAgain">Nochmal</button>${nextK?`<button class="btn" id="mNext">Weiter: ${esc(MOUSE_EX[nextK].title)}</button>`:''}</div></div></div>`;
+  $('#mAgain').addEventListener('click',()=>startMouse(M.ex));
+  if(nextK)$('#mNext').addEventListener('click',()=>startMouse(nextK));
+}
+function nextClick(){
+  const size=Math.max(40,86-M.n*5);const p=randPos(size,size);
+  const b=document.createElement('button');b.className='target';b.setAttribute('aria-label','Zielscheibe');
+  b.style.cssText=`left:${p.x}px;top:${p.y}px;width:${size}px;height:${size}px`;
+  b.addEventListener('click',()=>{if(b.dataset.hit)return;b.dataset.hit=1;b.classList.add('pop');setTimeout(()=>b.remove(),200);if(!stepM())nextClick();});
+  arena().appendChild(b);
+}
+function makeIcon(emo,label){const f=document.createElement('div');f.className='icon';f.innerHTML=`<span class="i-emo">${emo}</span><span class="i-lbl">${esc(label)}</span>`;return f;}
+function nextDouble(){
+  const p=randPos(112,96);const f=makeIcon('📁','Ordner');f.style.left=p.x+'px';f.style.top=p.y+'px';
+  f.addEventListener('click',()=>{if(f.dataset.open)return;f.classList.add('sel');hintM('Markiert! Zum Öffnen schnell zweimal hintereinander klicken.');});
+  f.addEventListener('dblclick',()=>{if(f.dataset.open)return;f.dataset.open=1;$('.i-emo',f).textContent='📂';f.classList.remove('sel');f.classList.add('opened');hintM('Geöffnet! 👍');setTimeout(()=>{f.remove();if(!stepM())nextDouble();},450);});
+  arena().appendChild(f);hintM('Öffne den Ordner mit einem Doppelklick.');
+}
+function nextRight(){
+  const want=rnd(CTX);const p=randPos(112,96);const f=makeIcon('📄','Brief');f.style.left=p.x+'px';f.style.top=p.y+'px';
+  f.addEventListener('click',()=>hintM('Das war die linke Taste. Nimm die rechte Maustaste!'));
+  f.addEventListener('contextmenu',e=>{e.preventDefault();e.stopPropagation();showCtx(e,want,f);});
+  arena().appendChild(f);hintM(`Rechtsklick auf „Brief“, dann „${want}“ wählen.`);
+}
+function showCtx(e,want,f){
+  const a=arena();$$('.ctx',a).forEach(x=>x.remove());
+  const r=a.getBoundingClientRect();const m=document.createElement('div');m.className='ctx';
+  CTX.forEach(c=>{const it=document.createElement('button');it.textContent=c;
+    it.addEventListener('click',ev=>{ev.stopPropagation();m.remove();
+      if(c===want){f.remove();hintM('Richtig! ✔');if(!stepM())setTimeout(nextRight,400);}
+      else hintM(`Das war „${c}“. Gesucht ist „${want}“. Nochmal mit rechts auf den Brief klicken.`);
+    });m.appendChild(it);});
+  a.appendChild(m);
+  const x=Math.min(e.clientX-r.left,a.clientWidth-m.offsetWidth-6),y=Math.min(e.clientY-r.top,a.clientHeight-m.offsetHeight-6);
+  m.style.left=Math.max(6,x)+'px';m.style.top=Math.max(6,y)+'px';
+}
+function overlap(a,b){const A=a.getBoundingClientRect(),B=b.getBoundingClientRect();const cx=A.left+A.width/2,cy=A.top+A.height/2;return cx>B.left&&cx<B.right&&cy>B.top&&cy<B.bottom;}
+function setupDrag(){
+  const a=arena();const H=a.clientHeight;
+  const folder=makeIcon('📁','Meine Dateien');folder.classList.add('big');folder.style.right='28px';folder.style.top=Math.max(10,H/2-90)+'px';a.appendChild(folder);
+  FILES.forEach(([emo,name],i)=>{
+    const f=makeIcon(emo,name);f.classList.add('file');
+    f.style.left=(24+(i%2)*132)+'px';f.style.top=(30+Math.floor(i/2)*150)+'px';
+    f.addEventListener('pointerdown',e=>{
+      if(e.button!==0)return;e.preventDefault();
+      try{f.setPointerCapture(e.pointerId);}catch(err){}
+      f.classList.add('dragging');
+      const ar=a.getBoundingClientRect(),fr=f.getBoundingClientRect();
+      const dx=e.clientX-fr.left,dy=e.clientY-fr.top,sx=f.style.left,sy=f.style.top;let moved=false;
+      const move=ev=>{moved=true;f.style.left=(ev.clientX-ar.left-dx)+'px';f.style.top=(ev.clientY-ar.top-dy)+'px';folder.classList.toggle('hot',overlap(f,folder));};
+      const up=ev=>{
+        try{f.releasePointerCapture(ev.pointerId);}catch(err){}
+        f.removeEventListener('pointermove',move);f.removeEventListener('pointerup',up);f.removeEventListener('pointercancel',up);
+        f.classList.remove('dragging');folder.classList.remove('hot');
+        if(overlap(f,folder)){f.classList.add('into');setTimeout(()=>f.remove(),250);hintM(`„${name}“ liegt jetzt im Ordner ✔`);stepM();}
+        else{f.style.left=sx;f.style.top=sy;if(moved)hintM('Fast! Lass die Datei direkt über dem Ordner los.');else hintM('Maustaste gedrückt halten und dabei die Maus bewegen.');}
+      };
+      f.addEventListener('pointermove',move);f.addEventListener('pointerup',up);f.addEventListener('pointercancel',up);
+    });
+    a.appendChild(f);
+  });
+  hintM('Zieh alle vier Dateien in den Ordner „Meine Dateien“.');
+}
+
+/* ================= Tastenkürzel ================= */
+const SC=[
+  {k:'c',name:'Kopieren',desc:'Das Markierte kommt in die Zwischenablage. Das Original bleibt, wo es ist.'},
+  {k:'v',name:'Einfügen',desc:'Fügt ein, was du zuletzt kopiert oder ausgeschnitten hast.'},
+  {k:'x',name:'Ausschneiden',desc:'Das Markierte wird entfernt und in die Zwischenablage gelegt. Praktisch zum Verschieben.'},
+  {k:'z',name:'Rückgängig',desc:'Macht den letzten Schritt rückgängig. Dein Rettungsanker!'},
+  {k:'y',name:'Wiederholen',desc:'Holt zurück, was du gerade rückgängig gemacht hast.'},
+  {k:'a',name:'Alles markieren',desc:'Markiert den ganzen Text oder alle Dateien in einem Ordner.'},
+  {k:'s',name:'Speichern',desc:'Speichert das Dokument. Lieber einmal zu oft als zu selten.'},
+  {k:'p',name:'Drucken',desc:'Öffnet das Fenster zum Drucken.'},
+  {k:'f',name:'Suchen',desc:'Sucht ein Wort im Text oder auf einer Webseite.'}
+];
+const Q={active:false,order:[],i:0,score:0,wrong:0,lock:false};
+function renderSC(){
+  $('#scGrid').innerHTML=SC.map(s=>`<div class="sc-card${P.shortcuts[s.k]?' learned':''}"><div class="sc-keys"><kbd>Strg</kbd><span>+</span><kbd>${s.k.toUpperCase()}</kbd></div><b>${esc(s.name)}</b><p>${esc(s.desc)}</p></div>`).join('');
+}
+function startQuiz(){
+  Q.order=shuffle(SC.slice());Q.i=0;Q.score=0;Q.active=true;
+  $('#quizStart').hidden=true;$('#quizRun').hidden=false;
+  if(document.activeElement&&document.activeElement!==document.body)document.activeElement.blur();
+  showQ();
+}
+function showQ(){
+  const q=Q.order[Q.i];Q.wrong=0;Q.lock=false;
+  $('#qName').textContent=q.name;
+  const m=$('#qMsg');m.textContent='Halte Strg gedrückt und tippe dann den Buchstaben.';m.className='q-msg';
+  $('#qProg').textContent=`Frage ${Q.i+1} von ${Q.order.length}, davon ${Q.score} beim ersten Versuch richtig`;
+  highlightKeys(kbQuizMap,[]);
+}
+function nextQ(){Q.i++;if(Q.i>=Q.order.length)endQuiz();else showQ();}
+function endQuiz(){
+  Q.active=false;$('#quizRun').hidden=true;$('#quizStart').hidden=false;highlightKeys(kbQuizMap,[]);
+  const perfect=Q.score===Q.order.length;
+  $('#quizStartText').innerHTML=`Ergebnis: <b>${Q.score} von ${Q.order.length}</b> beim ersten Versuch richtig. ${perfect?'Perfekt! 🏆':'Gleich nochmal? Mit jeder Runde sitzt es besser.'}`;
+  $('#qStart').textContent='Nochmal spielen';
+}
+function stopQuiz(){if(Q.active){Q.active=false;$('#quizRun').hidden=true;$('#quizStart').hidden=false;}}
+function quizHint(){const q=Q.order[Q.i];highlightKeys(kbQuizMap,['CtrlL',q.k]);const m=$('#qMsg');m.textContent=`Tipp: Strg und ${q.k.toUpperCase()} – schau auf die markierten Tasten unten.`;m.className='q-msg';}
+function quizKey(e){
+  if(!(e.ctrlKey||e.metaKey))return;
+  const k=(e.key||'').toLowerCase();
+  if(['control','meta','shift','alt','altgraph'].includes(k))return;
+  e.preventDefault();
+  if(Q.lock)return;
+  const q=Q.order[Q.i];const m=$('#qMsg');
+  if(k===q.k){
+    Q.lock=true;if(Q.wrong===0)Q.score++;
+    P.shortcuts[q.k]=true;save();renderSC();
+    m.textContent=`Richtig! Strg + ${q.k.toUpperCase()} = ${q.name} ✔`;m.className='q-msg ok';
+    highlightKeys(kbQuizMap,['CtrlL',q.k]);setTimeout(nextQ,1300);
+  }else{
+    Q.wrong++;const o=SC.find(s=>s.k===k);const shown=k.length===1?k.toUpperCase():'diese Taste';
+    m.textContent=o?`Das war Strg + ${shown} = „${o.name}“. Versuch es nochmal!`:`Strg + ${shown} ist hier nicht gefragt. Versuch es nochmal!`;
+    m.className='q-msg bad';
+    if(Q.wrong>=2)setTimeout(quizHint,900);
+  }
+}
+
+/* ================= Word ================= */
+const wordInit=()=>'<div>Einladung</div><div><br></div><div>Liebe Freunde,</div><div>ich lade euch herzlich zu meinem Geburtstag ein.</div><div>Wann: Samstag um 18 Uhr</div><div>Wo: bei mir zu Hause</div><div>Bitte bringt gute Laune mit!</div><div><br></div><div>Euer '+esc(ME().name||'Harry')+'</div>';
+const editor=$('#editor');
+function allChars(target,test){
+  const w=document.createTreeWalker(editor,NodeFilter.SHOW_TEXT);let full='';const owners=[];let n;
+  while((n=w.nextNode())){full+=n.data;for(let i=0;i<n.data.length;i++)owners.push(n.parentElement);}
+  full=full.replace(/\u00a0/g,' ');
+  const i=full.indexOf(target);if(i<0)return false;
+  for(let j=i;j<i+target.length;j++){if(full[j]===' ')continue;if(!test(owners[j]))return false;}
+  return true;
+}
+const isBold=el=>{const w=getComputedStyle(el).fontWeight;return (parseInt(w,10)||(w==='bold'?700:400))>=600;};
+const isItalic=el=>getComputedStyle(el).fontStyle==='italic';
+const isUnder=el=>{let x=el;while(x&&x!==editor.parentElement){const s=getComputedStyle(x);if((s.textDecorationLine||s.textDecoration||'').includes('underline'))return true;x=x.parentElement;}return false;};
+const isBig=el=>parseFloat(getComputedStyle(el).fontSize)>=31.5;
+const isCentered=el=>{let x=el;while(x&&x!==editor){const d=getComputedStyle(x).display;if(d==='block'||d==='list-item')break;x=x.parentElement;}return getComputedStyle(x||editor).textAlign.includes('center');};
+const WORD_TASKS=[
+  {id:'w1',title:'Überschrift fett machen',text:'Markiere das Wort „Einladung“: einfach doppelt draufklicken. Dann auf F klicken.',real:'Im echten Word: Register „Start“, Gruppe „Schriftart“, Knopf F (für Fett).',check:()=>allChars('Einladung',isBold)},
+  {id:'w2',title:'Überschrift größer machen',text:'Markiere „Einladung“ und wähle die Größe 24 oder 36.',real:'Im echten Word: Register „Start“, Feld „Schriftgrad“ mit der Zahl.',check:()=>allChars('Einladung',isBig)},
+  {id:'w3',title:'Überschrift zentrieren',text:'Klicke in die Zeile „Einladung“ und dann auf „Zentriert“ (das Symbol mit den mittigen Linien).',real:'Im echten Word: Register „Start“, Gruppe „Absatz“, Knopf „Zentriert“.',check:()=>allChars('Einladung',isCentered)},
+  {id:'w4',title:'Kursiv schreiben',text:'Markiere den Satz „Bitte bringt gute Laune mit!“ (Maustaste gedrückt halten und darüberziehen) und klicke auf K.',real:'Kursiv bedeutet schräge Schrift. Im echten Word: Register „Start“, Knopf K.',check:()=>allChars('Bitte bringt gute Laune mit!',isItalic)},
+  {id:'w5',title:'Unterstreichen',text:'Markiere „Samstag um 18 Uhr“ und klicke auf U.',real:'Im echten Word: Register „Start“, Knopf U. Tipp: Unterstreichen sparsam einsetzen, fett wirkt meist ruhiger.',check:()=>allChars('Samstag um 18 Uhr',isUnder)},
+  {id:'w6',title:'Selbst etwas schreiben',text:'Klicke ans Ende der Zeile „Bitte bringt gute Laune mit!“, drücke Enter und schreibe: Ich freue mich auf euch!',real:'Mit Enter beginnst du einen neuen Absatz. Vertippt? Mit der Rücktaste ⌫ löschst du das letzte Zeichen.',check:()=>/ich freue mich auf euch/i.test(editor.innerText)}
+];
+function renderTasks(box,tasks,done,label){
+  const n=tasks.filter(t=>done[t.id]).length;
+  let html=`<h3>Deine Aufgaben</h3><p class="muted">${n} von ${tasks.length} erledigt</p><ol class="tasklist">`;
+  tasks.forEach((t,i)=>{
+    const d=!!done[t.id];const cur=!d&&tasks.slice(0,i).every(x=>done[x.id]);
+    html+=`<li class="${d?'done':''}${cur?' cur':''}"><span class="tick">${d?'✔':i+1}</span><div><b>${esc(t.title)}</b><p>${esc(t.text)}</p>${(cur||d)?`<p class="real">💡 ${esc(t.real)}</p>`:''}</div></li>`;
+  });
+  html+='</ol>';
+  if(n===tasks.length)html+=`<div class="all-done">🏆 Alle ${label}-Aufgaben geschafft! Mit „Von vorne beginnen“ kannst du alles wiederholen.</div>`;
+  box.innerHTML=html;
+}
+function checkTasks(tasks,done,box,label){
+  let changed=false;
+  tasks.forEach(t=>{if(!done[t.id]){let ok=false;try{ok=t.check();}catch(e){}if(ok){done[t.id]=true;changed=true;toast(`✔ Erledigt: ${t.title}`);}}});
+  if(changed){save();renderTasks(box,tasks,done,label);if(tasks.every(t=>done[t.id]))setTimeout(()=>toast(`🏆 Alle ${label}-Aufgaben geschafft!`),1500);}
+}
+let wSaveT;
+function saveWord(){clearTimeout(wSaveT);wSaveT=setTimeout(()=>{P.wordHtml=editor.innerHTML;save();},400);}
+function syncToolbar(){['bold','italic','underline'].forEach(c=>{const b=$(`.rb[data-cmd="${c}"]`);let on=false;try{on=document.queryCommandState(c);}catch(e){}b.classList.toggle('on',!!on);});}
+function afterWordChange(){syncToolbar();checkTasks(WORD_TASKS,P.word,$('#wordTasks'),'Word');saveWord();}
+function applySize(pt){
+  document.execCommand('styleWithCSS',false,false);
+  document.execCommand('fontSize',false,'7');
+  $$('font[size="7"]',editor).forEach(f=>{
+    const s=document.createElement('span');s.style.fontSize=pt+'pt';
+    while(f.firstChild)s.appendChild(f.firstChild);
+    $$('[style]',s).forEach(x=>{x.style.fontSize='';});
+    $$('font[size]',s).forEach(x=>x.removeAttribute('size'));
+    f.replaceWith(s);
+  });
+}
+function setupWord(){
+  try{document.execCommand('defaultParagraphSeparator',false,'div');}catch(e){}
+  editor.innerHTML=P.wordHtml||wordInit();
+  $$('.rb[data-cmd]').forEach(b=>{
+    b.addEventListener('mousedown',e=>e.preventDefault());
+    b.addEventListener('click',()=>{
+      const s=getSelection();
+      if(!s.rangeCount||!editor.contains(s.anchorNode)){toast('Klicke zuerst in den Text oder markiere etwas.');return;}
+      const c=b.dataset.cmd;
+      if(c==='size')applySize(b.dataset.v);
+      else{try{document.execCommand('styleWithCSS',false,false);}catch(e){}document.execCommand(c,false,null);}
+      afterWordChange();
+    });
+  });
+  editor.addEventListener('input',afterWordChange);
+  editor.addEventListener('paste',e=>{e.preventDefault();const t=(e.clipboardData||window.clipboardData).getData('text/plain');document.execCommand('insertText',false,t);});
+  editor.addEventListener('drop',e=>e.preventDefault());
+  document.addEventListener('selectionchange',()=>{if(route!=='word')return;const s=getSelection();if(s.rangeCount&&editor.contains(s.anchorNode))syncToolbar();});
+  $('#wReset').addEventListener('click',()=>{editor.innerHTML=wordInit();P.word={};P.wordHtml=null;save();renderTasks($('#wordTasks'),WORD_TASKS,P.word,'Word');toast('Die Übung beginnt von vorne.');});
+  renderTasks($('#wordTasks'),WORD_TASKS,P.word,'Word');
+}
+
+/* ================= Excel ================= */
+const XL_COLS=['A','B','C','D','E'],XL_ROWS=9;
+const XL_INIT={A1:'Einkauf',B1:'Preis (€)',C1:'Menge',D1:'Gesamt (€)',A2:'Brot',B2:'3',A3:'Milch',B3:'2',A4:'Käse',B4:'5',A5:'Äpfel',B5:'4',A6:'Summe'};
+let XR=P.sheet&&typeof P.sheet==='object'?Object.assign({},P.sheet):Object.assign({},XL_INIT);
+let XSEL=null;
+const colIdx=c=>{let n=0;for(const ch of c)n=n*26+(ch.charCodeAt(0)-64);return n;};
+const colName=n=>{let s='';while(n>0){const m=(n-1)%26;s=String.fromCharCode(65+m)+s;n=Math.floor((n-1)/26);}return s;};
+const splitRef=r=>{const m=r.match(/^([A-Z]+)(\d+)$/);return{c:colIdx(m[1]),r:parseInt(m[2],10)};};
+function parseNum(s){const t=s.replace(/\s/g,'').replace(/€/g,'');if(/^[+-]?\d+(,\d+)?$/.test(t))return parseFloat(t.replace(',','.'));return null;}
+function cellVal(ref,stack){
+  stack=stack||new Set();ref=ref.toUpperCase();
+  const raw=String(XR[ref]==null?'':XR[ref]).trim();
+  if(raw==='')return null;
+  if(raw[0]==='='){
+    if(stack.has(ref))throw{e:'Zirkelbezug'};
+    stack.add(ref);
+    try{return evalFormula(raw.slice(1),stack);}finally{stack.delete(ref);}
+  }
+  const num=parseNum(raw);return num===null?raw:num;
+}
+function tokenize(src){
+  const out=[];let i=0;
+  while(i<src.length){
+    const c=src[i];if(/\s/.test(c)){i++;continue;}
+    const rest=src.slice(i);let m;
+    if((m=rest.match(/^\d+(?:,\d+)?/))){out.push({t:'num',v:parseFloat(m[0].replace(',','.'))});i+=m[0].length;continue;}
+    if((m=rest.match(/^([A-Za-z]{1,3}\d+)(?::([A-Za-z]{1,3}\d+))?/))){out.push(m[2]?{t:'range',a:m[1].toUpperCase(),b:m[2].toUpperCase()}:{t:'ref',v:m[1].toUpperCase()});i+=m[0].length;continue;}
+    if((m=rest.match(/^([A-Za-zÄÖÜäöü]+)\s*\(/))){out.push({t:'fn',v:m[1].toUpperCase()});i+=m[0].length;continue;}
+    if('+-*/^();'.includes(c)){out.push({t:'op',v:c});i++;continue;}
+    throw{e:'#NAME?'};
+  }
+  return out;
+}
+function evalFormula(src,stack){
+  const tk=tokenize(src);let p=0;
+  const peek=()=>tk[p];const take=()=>tk[p++];
+  const isOp=v=>!!peek()&&peek().t==='op'&&peek().v===v;
+  const num=v=>{if(v===null)return 0;if(typeof v==='number')return v;throw{e:'#WERT!'};};
+  function expr(){let v=term();while(isOp('+')||isOp('-')){const o=take().v;const r=term();v=o==='+'?v+r:v-r;}return v;}
+  function term(){let v=power();while(isOp('*')||isOp('/')){const o=take().v;const r=power();if(o==='/'){if(r===0)throw{e:'#DIV/0!'};v/=r;}else v*=r;}return v;}
+  function power(){let v=unary();if(isOp('^')){take();v=Math.pow(v,power());}return v;}
+  function unary(){if(isOp('-')){take();return -unary();}if(isOp('+')){take();return unary();}return primary();}
+  function rangeVals(a,b){const A=splitRef(a),B=splitRef(b);const out=[];for(let c=Math.min(A.c,B.c);c<=Math.max(A.c,B.c);c++)for(let r=Math.min(A.r,B.r);r<=Math.max(A.r,B.r);r++)out.push(cellVal(colName(c)+r,stack));return out;}
+  function arg(){if(peek()&&peek().t==='range'){const r=take();return{range:rangeVals(r.a,r.b)};}return{val:expr()};}
+  function callFn(name,args){
+    const nums=[];args.forEach(a=>{if(a.range)a.range.forEach(v=>{if(typeof v==='number')nums.push(v);});else nums.push(a.val);});
+    const sum=nums.reduce((s,x)=>s+x,0);
+    switch(name){
+      case 'SUMME':return sum;
+      case 'MITTELWERT':if(!nums.length)throw{e:'#DIV/0!'};return sum/nums.length;
+      case 'MIN':return nums.length?Math.min(...nums):0;
+      case 'MAX':return nums.length?Math.max(...nums):0;
+      case 'ANZAHL':return nums.length;
+      default:throw{e:'#NAME?'};
+    }
+  }
+  function primary(){
+    const t=take();if(!t)throw{e:'#WERT!'};
+    if(t.t==='num')return t.v;
+    if(t.t==='ref')return num(cellVal(t.v,stack));
+    if(t.t==='op'&&t.v==='('){const v=expr();if(!isOp(')'))throw{e:'#WERT!'};take();return v;}
+    if(t.t==='fn'){const args=[];if(!isOp(')')){do{args.push(arg());}while(isOp(';')&&take());}if(!isOp(')'))throw{e:'#WERT!'};take();return callFn(t.v,args);}
+    throw{e:'#WERT!'};
+  }
+  const v=expr();if(p<tk.length)throw{e:'#WERT!'};return v;
+}
+const fmt=v=>(Math.round(v*100)/100).toLocaleString('de-AT',{maximumFractionDigits:2,useGrouping:false});
+function display(ref){
+  try{const v=cellVal(ref);if(v===null)return{txt:'',num:false};if(typeof v==='number')return{txt:fmt(v),num:true};return{txt:v,num:false};}
+  catch(err){return{txt:(err&&err.e)||'#WERT!',num:false,err:true};}
+}
+function val(ref){try{return cellVal(ref);}catch(e){return NaN;}}
+function isF(ref){return String(XR[ref]||'').trim().startsWith('=');}
+const rowFormulaOk=r=>{const f=String(XR['D'+r]||'');return isF('D'+r)&&new RegExp('B'+r,'i').test(f)&&new RegExp('C'+r,'i').test(f)&&typeof val('D'+r)==='number'&&Math.abs(val('D'+r)-(val('B'+r)||0)*(val('C'+r)||0))<1e-9;};
+const XL_TASKS=[
+  {id:'x1',title:'Eine Zahl eintragen',text:'Klicke auf die Zelle C2 (Spalte C, Zeile 2), tippe 2 und drücke Enter. Du kaufst 2 Brote.',real:'Jede Zelle hat eine Adresse: zuerst der Buchstabe der Spalte, dann die Nummer der Zeile.',check:()=>val('C2')===2},
+  {id:'x2',title:'Die Spalte ausfüllen',text:'Trage in C3, C4 und C5 jeweils eine 1 ein.',real:'Nach Enter springt Excel automatisch eine Zelle nach unten. Praktisch!',check:()=>['C3','C4','C5'].every(r=>val(r)===1)},
+  {id:'x3',title:'Die erste Formel',text:'Klicke auf D2, tippe =B2*C2 und drücke Enter. Das Sternchen * bedeutet „mal“.',real:'Jede Formel beginnt mit =. Dann rechnet Excel selbst: Preis mal Menge.',check:()=>rowFormulaOk(2)},
+  {id:'x4',title:'Für jede Zeile rechnen',text:'Schreibe genauso in D3 =B3*C3, in D4 =B4*C4 und in D5 =B5*C5.',real:'Im echten Excel geht das schneller: D2 anklicken und das kleine Quadrat rechts unten an der Zelle (das Ausfüllkästchen) nach unten ziehen.',check:()=>[3,4,5].every(rowFormulaOk)},
+  {id:'x5',title:'Die Summe bilden',text:'Klicke auf D6, tippe =SUMME(D2:D5) und drücke Enter. D2:D5 heißt: alle Zellen von D2 bis D5.',real:'Im echten Excel gibt es dafür auch den Knopf AutoSumme Σ im Register „Start“.',check:()=>isF('D6')&&/SUMME\s*\(\s*D2\s*:\s*D5\s*\)/i.test(String(XR.D6))&&typeof val('D6')==='number'},
+  {id:'x6',title:'Excel rechnet mit',text:'Der Käse war teurer: Ändere in B4 den Preis auf 6 und schau, was mit D4 und D6 passiert.',real:'Das ist der große Vorteil von Formeln: Ändert sich eine Zahl, rechnet Excel alles von selbst neu.',check:()=>val('B4')===6&&isF('D4')&&isF('D6')}
+];
+function cellEl(ref){return $(`.cell[data-ref="${ref}"]`);}
+function renderCells(){
+  $$('.cell').forEach(inp=>{
+    if(inp.classList.contains('editing'))return;
+    const ref=inp.dataset.ref;const d=display(ref);
+    inp.value=d.txt;inp.classList.toggle('num',d.num);inp.classList.toggle('err',!!d.err);inp.classList.toggle('fml',isF(ref));
+  });
+}
+function commit(ref,v){
+  v=String(v).trim();
+  if(v==='')delete XR[ref];else XR[ref]=v;
+  P.sheet=XR;renderCells();
+  checkTasks(XL_TASKS,P.excel,$('#excelTasks'),'Excel');save();
+}
+function markHeaders(ref){
+  $$('#grid th.hl').forEach(h=>h.classList.remove('hl'));
+  const m=ref.match(/^([A-Z]+)(\d+)$/);if(!m)return;
+  const c=$(`#grid th[data-col="${m[1]}"]`),r=$(`#grid th[data-row="${m[2]}"]`);if(c)c.classList.add('hl');if(r)r.classList.add('hl');
+}
+function moveSel(ref,dc,dr){
+  const s=splitRef(ref);const c=Math.min(XL_COLS.length,Math.max(1,s.c+dc)),r=Math.min(XL_ROWS,Math.max(1,s.r+dr));
+  const el=cellEl(colName(c)+r);if(el)el.focus();
+}
+function bindCell(inp){
+  const ref=inp.dataset.ref;
+  let justFocused=false;
+  inp.addEventListener('focus',()=>{XSEL=ref;inp.classList.add('editing');inp.value=XR[ref]||'';$('#nameBox').textContent=ref;$('#fx').value=inp.value;markHeaders(ref);try{inp.select();}catch(e){}justFocused=true;});
+  inp.addEventListener('mouseup',e=>{if(justFocused){e.preventDefault();justFocused=false;}});
+  inp.addEventListener('input',()=>{$('#fx').value=inp.value;});
+  inp.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){e.preventDefault();commit(ref,inp.value);moveSel(ref,0,e.shiftKey?-1:1);}
+    else if(e.key==='Escape'){inp.value=XR[ref]||'';inp.blur();}
+    else if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();commit(ref,inp.value);moveSel(ref,0,e.key==='ArrowDown'?1:-1);}
+  });
+  inp.addEventListener('blur',()=>{if(inp.classList.contains('editing')){inp.classList.remove('editing');commit(ref,inp.value);}});
+}
+function buildGrid(){
+  let h='<thead><tr><th></th>'+XL_COLS.map(c=>`<th data-col="${c}">${c}</th>`).join('')+'</tr></thead><tbody>';
+  for(let r=1;r<=XL_ROWS;r++){h+=`<tr><th data-row="${r}">${r}</th>`+XL_COLS.map(c=>`<td><input class="cell" data-ref="${c}${r}" aria-label="Zelle ${c}${r}" autocomplete="off" spellcheck="false"></td>`).join('')+'</tr>';}
+  $('#grid').innerHTML=h+'</tbody>';
+  $$('.cell').forEach(bindCell);renderCells();
+}
+function setupExcel(){
+  buildGrid();
+  const fx=$('#fx');
+  fx.addEventListener('input',()=>{if(!XSEL)return;const inp=cellEl(XSEL);if(inp&&inp.classList.contains('editing'))inp.value=fx.value;});
+  fx.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();if(!XSEL){toast('Klicke zuerst auf eine Zelle.');return;}commit(XSEL,fx.value);const inp=cellEl(XSEL);if(inp)inp.focus();}});
+  $('#xReset').addEventListener('click',()=>{XR=Object.assign({},XL_INIT);P.sheet=null;P.excel={};save();renderCells();renderTasks($('#excelTasks'),XL_TASKS,P.excel,'Excel');fx.value='';toast('Die Übung beginnt von vorne.');});
+  renderTasks($('#excelTasks'),XL_TASKS,P.excel,'Excel');
+}
+
+
+/* ================= Dateien & Ordner ================= */
+const BAD_CHARS=/[\\/:*?"<>|]/;
+const ROOTS={desktop:{name:'Desktop',emo:'🖥️'},dokumente:{name:'Dokumente',emo:'📄'},bilder:{name:'Bilder',emo:'🖼️'},downloads:{name:'Downloads',emo:'⬇️'},trash:{name:'Papierkorb',emo:'🗑️'}};
+const FS_INIT=()=>({n:100,items:[
+  {id:'i1',name:'Mietvertrag.pdf',type:'file',parent:'dokumente'},
+  {id:'i2',name:'Scan_0042.pdf',type:'file',parent:'dokumente'},
+  {id:'i3',name:'Lebenslauf'+(ME().name&&!BAD_CHARS.test(ME().name)?' '+ME().name:'')+'.docx',type:'file',parent:'dokumente'},
+  {id:'i4',name:'Haushaltsbuch.xlsx',type:'file',parent:'dokumente'},
+  {id:'i5',name:'Geburtstag.jpg',type:'file',parent:'bilder'},
+  {id:'i6',name:'Uhrturm.jpg',type:'file',parent:'bilder'},
+  {id:'i7',name:'Werbung.pdf',type:'file',parent:'downloads'},
+  {id:'i8',name:'Bedienungsanleitung.pdf',type:'file',parent:'downloads'},
+  {id:'i9',name:'Einkaufsliste.txt',type:'file',parent:'desktop'},
+  {id:'i10',name:'Urlaubsfoto.jpg',type:'file',parent:'trash',origin:'bilder'}
+]});
+let FS=(P.fs&&Array.isArray(P.fs.items))?JSON.parse(JSON.stringify(P.fs)):FS_INIT();
+const X={cur:'desktop',sel:null,clip:null,hist:[],search:'',renaming:null,count:0};
+const itemById=id=>FS.items.find(i=>i.id===id);
+const isRoot=id=>!!ROOTS[id];
+const fName=id=>isRoot(id)?ROOTS[id].name:((itemById(id)||{}).name||'?');
+function kids(pid){return FS.items.filter(i=>i.parent===pid).sort((a,b)=>a.type===b.type?a.name.localeCompare(b.name,'de'):(a.type==='folder'?-1:1));}
+function pathIds(id){const out=[];let x=id,g=0;while(x&&g++<60){out.unshift(x);if(isRoot(x))break;const it=itemById(x);x=it?it.parent:null;}return out;}
+function pathText(id){return pathIds(id).map(fName).join(' › ');}
+function inTrash(id){return pathIds(id)[0]==='trash';}
+function isInside(id,anc){let x=id,g=0;while(x&&g++<60){if(x===anc)return true;if(isRoot(x))return false;const it=itemById(x);x=it?it.parent:null;}return false;}
+function icon(it){if(it.type==='folder')return '📁';const e=(it.name.split('.').pop()||'').toLowerCase();return({pdf:'📕',docx:'📘',xlsx:'📗',jpg:'🖼️',jpeg:'🖼️',png:'🖼️',txt:'📝'})[e]||'📄';}
+function splitExt(n,isFile){const i=isFile?n.lastIndexOf('.'):-1;return i>0?[n.slice(0,i),n.slice(i)]:[n,''];}
+function nameTaken(pid,name,ex){return kids(pid).some(o=>o.id!==ex&&o.name.toLowerCase()===name.toLowerCase());}
+function freeName(pid,name,isFile){if(!nameTaken(pid,name))return name;const [b,e]=splitExt(name,isFile);let k=2;while(nameTaken(pid,`${b} (${k})${e}`))k++;return `${b} (${k})${e}`;}
+const BAD_MSG='Ein Name darf diese Zeichen nicht enthalten: \\ / : * ? " < > |';
+
+const fsFind=(name,test)=>FS.items.find(i=>i.name.toLowerCase()===name.toLowerCase()&&(!test||test(i)));
+const rechnungen=()=>FS.items.find(i=>i.type==='folder'&&i.name.trim().toLowerCase()==='rechnungen'&&i.parent==='dokumente');
+const FILE_TASKS=[
+  {id:'d1',title:'Einen Ordner öffnen',text:'Öffne den Ordner „Dokumente“: links einmal anklicken.',real:'In der Mitte öffnest du Ordner mit einem Doppelklick, genau wie im echten Windows.',check:()=>X.cur==='dokumente'},
+  {id:'d2',title:'Einen neuen Ordner anlegen',text:'Lege in „Dokumente“ einen neuen Ordner an (Knopf „Neuer Ordner“), tippe als Namen „Rechnungen“ und drücke Enter.',real:'Im echten Explorer findest du das oben unter „Neu“ bzw. „Neuer Ordner“. Tastenkürzel dort: Strg + Umschalt + N.',check:()=>!!rechnungen()},
+  {id:'d3',title:'Eine Datei umbenennen',text:'„Scan_0042.pdf“ ist eine Stromrechnung. Klicke die Datei an, drücke F2 (oder „Umbenennen“), tippe „Stromrechnung“ und drücke Enter.',real:'Die Endung .pdf hinter dem Punkt bleibt stehen. Sie zeigt Windows, mit welchem Programm die Datei geöffnet wird.',check:()=>!!fsFind('Stromrechnung.pdf')&&!fsFind('Scan_0042.pdf')},
+  {id:'d4',title:'Eine Datei verschieben',text:'Zieh „Stromrechnung.pdf“ mit gedrückter linker Maustaste auf den Ordner „Rechnungen“ und lass dort los.',real:'Alternative: Datei anklicken, Strg + X (Ausschneiden), Ordner öffnen, Strg + V (Einfügen).',check:()=>{const r=rechnungen();return !!r&&!!fsFind('Stromrechnung.pdf',i=>i.parent===r.id);}},
+  {id:'d5',title:'Eine Datei löschen',text:'Öffne „Downloads“ und lösche „Werbung.pdf“: anklicken und die Taste Entf drücken (oder „Löschen“).',real:'Gelöschtes landet zuerst im Papierkorb. Erst wenn man den Papierkorb leert, ist es wirklich weg.',check:()=>!!fsFind('Werbung.pdf',i=>i.parent==='trash')},
+  {id:'d6',title:'Etwas zurückholen',text:'Im Papierkorb liegt aus Versehen „Urlaubsfoto.jpg“. Öffne den Papierkorb, klicke das Foto an und dann auf „Wiederherstellen“.',real:'Im echten Windows liegt der Papierkorb auf dem Desktop. Dort: Rechtsklick auf die Datei und „Wiederherstellen“.',check:()=>!!fsFind('Urlaubsfoto.jpg',i=>i.parent==='bilder')},
+  {id:'d7',title:'Gezielt speichern',text:'Klicke unter dem Explorer auf „Speichern unter …“. Öffne Dokumente › Rechnungen (Doppelklick), gib als Dateiname „Versicherung“ ein und klicke „Speichern“.',real:'Der häufigste Grund, warum Dateien „verschwinden“: Man hat nicht geschaut, WO man speichert. Immer zuerst den Ordner prüfen!',check:()=>{const r=rechnungen();return !!r&&!!fsFind('Versicherung.docx',i=>i.parent===r.id);}}
+];
+function filesCheck(){checkTasks(FILE_TASKS,P.files,$('#fileTasks'),'Datei');}
+function xChanged(persist){if(persist!==false){P.fs=FS;save();}xRender();filesCheck();}
+
+function xRender(){
+  const top=pathIds(X.cur)[0];
+  $$('#xNav [data-id]').forEach(b=>b.classList.toggle('on',b.dataset.id===top));
+  const cr=$('#xCrumbs');cr.innerHTML='';
+  pathIds(X.cur).forEach((id,i)=>{
+    if(i){const s=document.createElement('span');s.className='sep';s.textContent='›';cr.appendChild(s);}
+    const b=document.createElement('button');b.textContent=(isRoot(id)?ROOTS[id].emo+' ':'')+fName(id);b.dataset.drop=id;
+    b.addEventListener('click',()=>xGo(id));cr.appendChild(b);
+  });
+  $('#xSearch').placeholder='Suchen in '+fName(X.cur);
+  const box=$('#xItems');box.innerHTML='';
+  let list;
+  if(X.search){const q=X.search.toLowerCase();list=FS.items.filter(i=>i.name.toLowerCase().includes(q)&&isInside(i.parent,X.cur));}
+  else list=kids(X.cur);
+  X.count=list.length;
+  if(!list.length){box.innerHTML=`<div class="x-empty">${X.search?'Keine Treffer.':X.cur==='trash'?'Der Papierkorb ist leer.':'Dieser Ordner ist leer.'}</div>`;}
+  list.forEach(it=>{
+    const d=document.createElement('div');
+    d.className='xi'+(X.sel===it.id?' sel':'')+(X.clip&&X.clip.mode==='cut'&&X.clip.id===it.id?' cut':'');
+    d.dataset.id=it.id;
+    if(it.type==='folder'&&!inTrash(it.id))d.dataset.drop=it.id;
+    const nameHtml=X.renaming===it.id?`<input value="${esc(it.name)}" aria-label="Neuer Name">`:`<span class="xn">${esc(it.name)}</span>`;
+    const loc=X.search?`<span class="xloc">in ${esc(fName(it.parent))}</span>`:(X.cur==='trash'&&it.origin?`<span class="xloc">aus ${esc(fName(it.origin))}</span>`:'');
+    d.innerHTML=`<span class="xe">${icon(it)}</span>${nameHtml}${loc}`;
+    box.appendChild(d);
+  });
+  const inp=$('input',box);
+  if(inp){
+    inp.addEventListener('keydown',e=>{e.stopPropagation();if(e.key==='Enter'){e.preventDefault();xEndRename(true);}else if(e.key==='Escape'){e.preventDefault();xEndRename(false);}});
+    inp.addEventListener('blur',()=>xEndRename(true));
+    inp.addEventListener('pointerdown',e=>e.stopPropagation());
+    inp.addEventListener('dblclick',e=>e.stopPropagation());
+  }
+  xChrome();
+}
+function xChrome(){
+  const s=X.sel&&itemById(X.sel);const trashView=X.cur==='trash';
+  const en=(k,v)=>{const b=$(`#xTools [data-x="${k}"]`);if(b)b.disabled=!v;};
+  en('new',!trashView&&!X.search);en('paste',!trashView&&!X.search&&!!X.clip);
+  ['cut','copy','rename','delete'].forEach(k=>en(k,!!s&&!trashView));
+  en('restore',!!s&&trashView);
+  $('#xTools [data-x="restore"]').hidden=!trashView;
+  $('#xBack').disabled=!X.hist.length;$('#xUp').disabled=isRoot(X.cur);
+  $('#xStatus').textContent=`${X.count} ${X.count===1?'Element':'Elemente'}${s?'   |   1 Element ausgewählt':''}`;
+}
+function xMarkSel(){$$('#xItems .xi').forEach(x=>x.classList.toggle('sel',x.dataset.id===X.sel));xChrome();}
+function xGo(id){if(id===X.cur&&!X.search)return;X.hist.push(X.cur);X.cur=id;X.sel=null;X.search='';$('#xSearch').value='';xChanged(false);}
+function xBack(){if(!X.hist.length)return;X.cur=X.hist.pop();if(!isRoot(X.cur)&&(!itemById(X.cur)||inTrash(X.cur)))X.cur='desktop';X.sel=null;X.search='';$('#xSearch').value='';xChanged(false);}
+function xUp(){if(isRoot(X.cur))return;xGo(itemById(X.cur).parent);}
+function xOpen(id){
+  const it=itemById(id);if(!it)return;
+  if(inTrash(id)){toast('Im Papierkorb kann man nichts öffnen. Zuerst wiederherstellen.');return;}
+  if(it.type==='folder')xGo(id);else toast(`„${it.name}“ würde jetzt im passenden Programm geöffnet.`);
+}
+function xMoveTo(id,target){
+  const it=itemById(id);if(!it)return;
+  if(target==='trash'){xDelete(id);return;}
+  if(it.parent===target)return;
+  if(it.type==='folder'&&isInside(target,id)){toast('Der Zielordner ist ein Unterordner des Quellordners.');return;}
+  if(nameTaken(target,it.name)){toast(`In „${fName(target)}“ gibt es schon „${it.name}“.`);return;}
+  it.parent=target;delete it.origin;if(X.sel===id)X.sel=null;
+  toast(`„${it.name}“ ist jetzt in ${fName(target)}.`);xChanged();
+}
+function xDelete(id){
+  const it=itemById(id);if(!it)return;
+  if(inTrash(id)){toast('Das liegt schon im Papierkorb.');return;}
+  it.origin=it.parent;it.parent='trash';X.sel=null;if(X.clip&&X.clip.id===id)X.clip=null;
+  toast(`„${it.name}“ liegt jetzt im Papierkorb.`);xChanged();
+}
+function xRestore(id){
+  const it=itemById(id);if(!it)return;
+  let o=it.origin;if(!o||(!isRoot(o)&&(!itemById(o)||inTrash(o))))o='desktop';
+  if(nameTaken(o,it.name,id))it.name=freeName(o,it.name,it.type==='file');
+  it.parent=o;delete it.origin;X.sel=null;
+  toast(`„${it.name}“ ist wieder in ${fName(o)}.`);xChanged();
+}
+function xNewFolder(){
+  if(X.cur==='trash'||X.search){toast('Hier kann man keinen Ordner anlegen.');return;}
+  const it={id:'i'+(FS.n++),name:freeName(X.cur,'Neuer Ordner',false),type:'folder',parent:X.cur};
+  FS.items.push(it);X.sel=it.id;X.renaming=it.id;xRender();xFocusRename(it);
+}
+function xStartRename(id){const it=itemById(id);if(!it||inTrash(id))return;X.sel=id;X.renaming=id;xRender();xFocusRename(it);}
+function xFocusRename(it){const inp=$('#xItems input');if(!inp)return;inp.focus();const dot=it.type==='file'?it.name.lastIndexOf('.'):-1;inp.setSelectionRange(0,dot>0?dot:it.name.length);}
+function xEndRename(ok){
+  const id=X.renaming;if(!id)return;
+  const inp=$('#xItems input');X.renaming=null;const it=itemById(id);
+  if(ok&&inp&&it){
+    const v=inp.value.trim();
+    if(!v)toast('Der Name darf nicht leer sein.');
+    else if(BAD_CHARS.test(v))toast(BAD_MSG);
+    else if(v!==it.name&&nameTaken(it.parent,v,id))toast('In diesem Ordner gibt es schon etwas mit diesem Namen.');
+    else if(v!==it.name){
+      if(it.type==='file'){const oe=(it.name.match(/\.[^.]+$/)||[''])[0].toLowerCase(),ne=(v.match(/\.[^.]+$/)||[''])[0].toLowerCase();if(oe!==ne)toast('Achtung: Die Endung hat sich geändert. Dann weiß Windows eventuell nicht mehr, womit die Datei geöffnet wird.');}
+      it.name=v;
+    }
+  }
+  xChanged();
+}
+function xCopy(id){X.clip={id,mode:'copy'};toast('Kopiert. Öffne jetzt den Zielordner und klicke „Einfügen“.');xRender();}
+function xCut(id){X.clip={id,mode:'cut'};toast('Ausgeschnitten. Öffne jetzt den Zielordner und klicke „Einfügen“.');xRender();}
+function cloneInto(id,pid,name){const it=itemById(id);const c={id:'i'+(FS.n++),name,type:it.type,parent:pid};FS.items.push(c);if(it.type==='folder')kids(id).forEach(k=>cloneInto(k.id,c.id,k.name));return c;}
+function xPaste(){
+  if(!X.clip){toast('Es ist nichts zum Einfügen da. Zuerst kopieren oder ausschneiden.');return;}
+  if(X.cur==='trash'||X.search)return;
+  const {id,mode}=X.clip;const it=itemById(id);
+  if(!it||inTrash(id)){X.clip=null;xChrome();return;}
+  if(mode==='cut'){X.clip=null;if(it.parent===X.cur){xRender();return;}xMoveTo(id,X.cur);return;}
+  if(it.type==='folder'&&isInside(X.cur,id)){toast('Der Zielordner ist ein Unterordner des Quellordners.');return;}
+  let n=it.name;if(nameTaken(X.cur,n)){const [b,e]=splitExt(n,it.type==='file');n=freeName(X.cur,`${b} - Kopie${e}`,it.type==='file');}
+  const c=cloneInto(id,X.cur,n);X.sel=c.id;toast(`„${n}“ eingefügt.`);xChanged();
+}
+function closeMenus(){$$('.ctx.fixed').forEach(m=>m.remove());}
+function popMenu(e,entries){
+  closeMenus();const m=document.createElement('div');m.className='ctx fixed';
+  entries.forEach(([label,fn,dis])=>{const b=document.createElement('button');b.textContent=label;b.disabled=!!dis;b.addEventListener('click',ev=>{ev.stopPropagation();closeMenus();fn();});m.appendChild(b);});
+  document.body.appendChild(m);
+  m.style.left=Math.max(6,Math.min(e.clientX,window.innerWidth-m.offsetWidth-8))+'px';
+  m.style.top=Math.max(6,Math.min(e.clientY,window.innerHeight-m.offsetHeight-8))+'px';
+}
+let xDrag=null,xHot=null;
+function xSetHot(el){if(xHot===el)return;if(xHot)xHot.classList.remove('drop-hot');xHot=el;if(el)el.classList.add('drop-hot');}
+function xDropEl(x,y,dragId){const el=document.elementFromPoint(x,y);const t=el&&el.closest('[data-drop]');if(!t||t.dataset.drop===dragId)return null;return t;}
+function xDragMove(e){
+  if(!xDrag)return;
+  if(!xDrag.active){
+    if(Math.hypot(e.clientX-xDrag.x,e.clientY-xDrag.y)<6)return;
+    xDrag.active=true;const it=itemById(xDrag.id);
+    const g=document.createElement('div');g.className='drag-ghost';g.textContent=icon(it)+' '+it.name;document.body.appendChild(g);xDrag.ghost=g;
+  }
+  xDrag.ghost.style.left=(e.clientX+14)+'px';xDrag.ghost.style.top=(e.clientY+10)+'px';
+  xSetHot(xDropEl(e.clientX,e.clientY,xDrag.id));
+}
+function xDragEnd(e){
+  if(!xDrag)return;const d=xDrag;xDrag=null;
+  if(!d.active)return;
+  d.ghost.remove();const t=xDropEl(e.clientX,e.clientY,d.id);xSetHot(null);
+  if(t)xMoveTo(d.id,t.dataset.drop);
+  else toast('Zum Verschieben die Datei direkt über einem Ordner loslassen.');
+}
+function xKey(e){
+  if(!$('#saveDlg').hidden)return;
+  const t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;
+  const id=X.sel;const ctrl=e.ctrlKey||e.metaKey;const k=(e.key||'').toLowerCase();
+  if(e.key==='F2'&&id){e.preventDefault();xStartRename(id);}
+  else if(e.key==='Delete'&&id){e.preventDefault();xDelete(id);}
+  else if(e.key==='Enter'&&id){e.preventDefault();xOpen(id);}
+  else if(ctrl&&k==='c'&&id){e.preventDefault();xCopy(id);}
+  else if(ctrl&&k==='x'&&id){e.preventDefault();xCut(id);}
+  else if(ctrl&&k==='v'){e.preventDefault();xPaste();}
+  else if(e.key==='Escape')closeMenus();
+}
+
+/* Speichern-unter-Dialog */
+const SD={cur:'dokumente'};
+function openSave(){SD.cur='dokumente';$('#sdName').value='Dokument1';sdRender();$('#saveDlg').hidden=false;setTimeout(()=>{const i=$('#sdName');i.focus();i.select();},40);}
+function sdClose(){$('#saveDlg').hidden=true;}
+function sdRender(){
+  const cr=$('#sdCrumbs');cr.innerHTML='';
+  pathIds(SD.cur).forEach((id,i)=>{
+    if(i){const s=document.createElement('span');s.className='sep';s.textContent='›';cr.appendChild(s);}
+    const b=document.createElement('button');b.textContent=(isRoot(id)?ROOTS[id].emo+' ':'')+fName(id);b.addEventListener('click',()=>{SD.cur=id;sdRender();});cr.appendChild(b);
+  });
+  $('#sdNav').innerHTML=['desktop','dokumente','bilder','downloads'].map(id=>`<button data-id="${id}" class="${pathIds(SD.cur)[0]===id?'on':''}">${ROOTS[id].emo} ${ROOTS[id].name}</button>`).join('');
+  $$('#sdNav [data-id]').forEach(b=>b.addEventListener('click',()=>{SD.cur=b.dataset.id;sdRender();}));
+  const list=kids(SD.cur).filter(i=>i.type==='folder'||/\.docx$/i.test(i.name));
+  const L=$('#sdList');
+  L.innerHTML=list.length?list.map(i=>`<button class="sd-row${i.type==='file'?' file':''}" data-id="${i.id}" data-t="${i.type}"><span>${icon(i)}</span><span>${esc(i.name)}</span></button>`).join(''):'<p class="muted" style="padding:10px;margin:0">Hier gibt es noch keine Ordner und keine Word-Dokumente.</p>';
+  $$('#sdList [data-t="folder"]').forEach(b=>{
+    b.addEventListener('click',()=>$$('#sdList .sd-row').forEach(x=>x.classList.toggle('sel',x===b)));
+    b.addEventListener('dblclick',()=>{SD.cur=b.dataset.id;sdRender();});
+  });
+  $$('#sdList [data-t="file"]').forEach(b=>b.addEventListener('click',()=>{const it=itemById(b.dataset.id);$('#sdName').value=it.name.replace(/\.docx$/i,'');}));
+}
+function sdSave(){
+  let n=$('#sdName').value.trim();
+  if(!n){toast('Bitte gib einen Dateinamen ein.');return;}
+  if(BAD_CHARS.test(n)){toast(BAD_MSG);return;}
+  if(!/\.docx$/i.test(n))n+='.docx';
+  if(nameTaken(SD.cur,n)){toast(`„${n}“ gibt es in diesem Ordner schon. Wähle einen anderen Namen.`);return;}
+  FS.items.push({id:'i'+(FS.n++),name:n,type:'file',parent:SD.cur});
+  sdClose();toast(`Gespeichert: ${n} in ${pathText(SD.cur)}`);xChanged();
+}
+function setupFiles(){
+  $$('#xNav [data-id]').forEach(b=>b.addEventListener('click',()=>xGo(b.dataset.id)));
+  $$('#xTools [data-x]').forEach(b=>b.addEventListener('click',()=>{
+    const id=X.sel;
+    const fn={new:xNewFolder,paste:xPaste,cut:()=>id&&xCut(id),copy:()=>id&&xCopy(id),rename:()=>id&&xStartRename(id),delete:()=>id&&xDelete(id),restore:()=>id&&xRestore(id)}[b.dataset.x];
+    if(fn)fn();
+  }));
+  $('#xBack').addEventListener('click',xBack);$('#xUp').addEventListener('click',xUp);
+  $('#xSearch').addEventListener('input',e=>{X.search=e.target.value.trim();X.sel=null;xRender();});
+  const box=$('#xItems');
+  box.addEventListener('pointerdown',e=>{
+    if(e.button!==0)return;
+    const el=e.target.closest('.xi');
+    if(!el){if(X.sel){X.sel=null;xMarkSel();}return;}
+    if(X.renaming)return;
+    if(X.sel!==el.dataset.id){X.sel=el.dataset.id;xMarkSel();}
+    xDrag={id:el.dataset.id,x:e.clientX,y:e.clientY,active:false,ghost:null};
+  });
+  box.addEventListener('dblclick',e=>{const el=e.target.closest('.xi');if(el&&!X.renaming)xOpen(el.dataset.id);});
+  box.addEventListener('contextmenu',e=>{
+    e.preventDefault();if(X.renaming)return;
+    const el=e.target.closest('.xi');
+    if(el){
+      const id=el.dataset.id;X.sel=id;xMarkSel();
+      if(X.cur==='trash')popMenu(e,[['Wiederherstellen',()=>xRestore(id)]]);
+      else popMenu(e,[['Öffnen',()=>xOpen(id)],['Ausschneiden',()=>xCut(id)],['Kopieren',()=>xCopy(id)],['Umbenennen',()=>xStartRename(id)],['Löschen',()=>xDelete(id)]]);
+    }else{
+      popMenu(e,[['Neu › Ordner',xNewFolder,X.cur==='trash'||!!X.search],['Einfügen',xPaste,!X.clip||X.cur==='trash'||!!X.search]]);
+    }
+  });
+  document.addEventListener('pointermove',xDragMove);
+  document.addEventListener('pointerup',xDragEnd);
+  document.addEventListener('pointerdown',e=>{if(!e.target.closest('.ctx.fixed'))closeMenus();});
+  window.addEventListener('scroll',closeMenus,{passive:true});
+  $('#fReset').addEventListener('click',()=>{
+    FS=FS_INIT();P.fs=null;P.files={};
+    Object.assign(X,{cur:'desktop',sel:null,clip:null,hist:[],search:'',renaming:null});$('#xSearch').value='';
+    save();xRender();renderTasks($('#fileTasks'),FILE_TASKS,P.files,'Datei');toast('Die Übung beginnt von vorne.');
+  });
+  $('#openSave').addEventListener('click',openSave);
+  $('#sdOk').addEventListener('click',sdSave);$('#sdCancel').addEventListener('click',sdClose);
+  $('#sdName').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();sdSave();}});
+  $('#saveDlg').addEventListener('keydown',e=>{if(e.key==='Escape'){e.stopPropagation();sdClose();}});
+  xRender();renderTasks($('#fileTasks'),FILE_TASKS,P.files,'Datei');
+}
+
+/* ================= Internet ================= */
+const NETF={searched:false,organic:false,back:false,url:false};
+const NET={page:'home',query:'',site:null,hist:[]};
+let lastResults=[];
+const slug=s=>s.toLowerCase().replace(/[^a-z0-9äöüß]+/g,'-').replace(/^-|-$/g,'')||'suche';
+function results(q){
+  if(/bus|fahrplan|straßenbahn|bim/i.test(q))return[
+    {ad:true,url:'www.ticket-schnaeppchen.example',title:'Bus & Bahn: Tickets bis zu 70 % billiger!',snip:'Nur heute: Gratis-App dazu. Jetzt sofort buchen und sparen!'},
+    {ad:true,url:'fahrplan-app-download.example',title:'Fahrplan-App herunterladen – kostenlos*',snip:'*Nach 3 Tagen kostenpflichtiges Abo. Die App für alle Busse.'},
+    {url:'www.verkehrsverbund.example/fahrplan',title:'Fahrplan und Haltestellen – Verkehrsverbund',snip:'Fahrpläne für alle Bus- und Straßenbahnlinien. Verbindung suchen, Haltestellen und Tickets.'},
+    {url:'www.stadt.example/verkehr/bus',title:'Öffentlicher Verkehr – Stadtportal',snip:'Informationen der Stadt zu Bus, Straßenbahn und Nachtverkehr.'}
+  ];
+  return[
+    {ad:true,url:'www.angebote-jetzt.example',title:`${q} – Angebot nur heute!`,snip:'Jetzt zugreifen, solange der Vorrat reicht.'},
+    {url:'www.lexikon.example/'+slug(q),title:`${q} – Lexikon`,snip:`Alles Wichtige zu „${q}“ einfach erklärt.`},
+    {url:'www.ratgeber.example/'+slug(q),title:`${q}: Tipps und Infos`,snip:'Ein Überblick mit den häufigsten Fragen und Antworten.'}
+  ];
+}
+function netCheck(){checkTasks(NET_TASKS,P.net,$('#netTasks'),'Internet');}
+const bState=()=>({page:NET.page,query:NET.query,site:NET.site});
+function bNav(state){NET.hist.push(bState());Object.assign(NET,state);bRender();}
+function bSearch(q){q=String(q||'').trim();if(!q)return;if(/bus|fahrplan/i.test(q))NETF.searched=true;bNav({page:'results',query:q,site:null});netCheck();}
+function bOpen(r){bNav({page:'site',site:r});if(!r.ad)NETF.organic=true;netCheck();}
+function bBack(){if(!NET.hist.length)return;const from=NET.page;Object.assign(NET,NET.hist.pop());if(from==='site'&&NET.page==='results')NETF.back=true;bRender();netCheck();}
+function bGo(v){
+  v=v.trim();if(!v)return;
+  if(/^\S+\.\S+$/.test(v)){
+    const u=v.replace(/^https?:\/\//i,'').replace(/\/$/,'').toLowerCase();
+    const known=[...lastResults,...results('bus')].find(r=>r.url.replace(/^www\./,'')===u.replace(/^www\./,''));
+    if(known)bOpen(known);else bNav({page:'site',site:{url:u,title:'Seite nicht gefunden',missing:true}});
+  }else bSearch(v);
+}
+function bRender(){
+  const pg=$('#bPage'),url=$('#bUrl');$('#bBack').disabled=!NET.hist.length;$('#bStatus').hidden=true;
+  if(NET.page==='home'){
+    url.value='';$('#bLock').textContent='🔍';$('#bTab').textContent='Neuer Tab';
+    pg.innerHTML=`<div class="b-home"><div class="b-logo">Suche</div><div class="b-search"><input id="bQ" placeholder="Wonach suchst du?" aria-label="Suchbegriff" autocomplete="off"><button id="bQBtn">Suchen</button></div><p class="b-hint">Übungs-Suchmaschine: Alle Ergebnisse sind erfunden.</p></div>`;
+  }else if(NET.page==='results'){
+    const q=NET.query;lastResults=results(q);
+    url.value='https://www.suche.example/?q='+encodeURIComponent(q).replace(/%20/g,'+');$('#bLock').textContent='🔒';$('#bTab').textContent=q+' – Suche';
+    pg.innerHTML=`<div class="b-rtop"><div class="b-logo">Suche</div><div class="b-search"><input id="bQ" value="${esc(q)}" aria-label="Suchbegriff" autocomplete="off"><button id="bQBtn">Suchen</button></div></div>`+
+      lastResults.map((r,i)=>`<div class="b-res"><div class="b-rurl">${r.ad?'<span class="b-ad">Anzeige</span>':''}<span>${esc(r.url)}</span></div><button class="b-link" data-r="${i}" data-href="https://${esc(r.url)}">${esc(r.title)}</button><p>${esc(r.snip)}</p></div>`).join('');
+  }else{
+    const s=NET.site;url.value='https://'+s.url;$('#bLock').textContent=s.missing?'⚠️':'🔒';$('#bTab').textContent=s.title;
+    if(s.missing)pg.innerHTML=`<div class="b-site"><h2>Diese Seite gibt es in der Übung nicht</h2><p>Probier es über die Suche oder geh mit dem Pfeil ← zurück.</p></div>`;
+    else if(s.ad)pg.innerHTML=`<div class="b-site adpage"><div class="ov-emoji">📢</div><h2>Das war eine Anzeige!</h2><p>Für diesen Platz ganz oben hat jemand bezahlt. Anzeigen sind oft nicht die offizielle Seite. Manche wollen dir nur etwas verkaufen oder ein teures Abo andrehen.</p><p><b>Geh mit dem Pfeil ← zurück</b> und wähle ein Ergebnis ohne „Anzeige“.</p></div>`;
+    else pg.innerHTML=`<div class="b-site"><h2>${esc(s.title)}</h2><p>${esc(s.snip)}</p><div class="note">✔ Gut gemacht: Das ist ein normales Suchergebnis, keine Werbung. Das hier ist eine Übungsseite ohne echte Daten.</div><p style="margin-top:16px">Jetzt zurück zu den Suchergebnissen: Pfeil <b>←</b> oben links.</p></div>`;
+  }
+  const q=$('#bQ');
+  if(q){q.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();bSearch(q.value);}});$('#bQBtn').addEventListener('click',()=>bSearch(q.value));}
+  $$('#bPage [data-r]').forEach(b=>b.addEventListener('click',()=>bOpen(lastResults[+b.dataset.r])));
+}
+const UQ=[
+  {u:'https://musterbank.example.konto-pruefung.example/login',ok:false,why:'Falsch. Ganz rechts vor dem ersten „/“ steht „konto-pruefung.example“. Das ist eine fremde Seite, „musterbank“ steht nur zur Tarnung vorne.'},
+  {u:'https://www.musterbank.example/login',ok:true,why:'Richtig! Ganz rechts vor dem ersten „/“ steht genau „musterbank.example“. Das ist die echte Seite.'},
+  {u:'https://www.musterbank-sicherheit.example/login',ok:false,why:'Falsch. „musterbank-sicherheit“ ist ein ganz anderer Name. Ein Bindestrich mit Zusatzwort reicht Betrügern schon für eine Fälschung.'}
+];
+function renderUQ(){
+  const box=$('#uqOpts');box.innerHTML='';
+  shuffle(UQ.slice()).forEach(o=>{
+    const b=document.createElement('button');b.className='uq-opt';b.textContent=o.u;
+    b.addEventListener('click',()=>{
+      $$('.uq-opt',box).forEach(x=>x.classList.remove('right','wrong'));b.classList.add(o.ok?'right':'wrong');
+      const m=$('#uqMsg');m.textContent=o.why;m.className='uq-msg '+(o.ok?'ok':'bad');
+      if(o.ok){NETF.url=true;netCheck();}
+    });
+    box.appendChild(b);
+  });
+}
+
+/* ================= E-Mail ================= */
+const mailSlug=s=>String(s).toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss').replace(/[^a-z0-9]+/g,'.').replace(/^\.+|\.+$/g,'');
+const MAIL_INIT=()=>{
+  const me=ME();const friend=me.leute[0]||'Maria Huber';const ff=friend.split(' ')[0];
+  const myAddr=(mailSlug(me.name)||'harry')+'@post.example';const fAddr=(mailSlug(friend)||'freund')+'@post.example';
+  const hallo=me.name?`Hallo ${me.name},`:'Hallo,';
+  const mails=[];
+  if(me.von)mails.push({id:'m0',folder:'inbox',read:false,from:me.von,addr:(mailSlug(me.von)||'absender')+'@post.example',to:myAddr,subj:'Schön, dass du übst!',date:'Heute, 08:00',body:`${hallo}\n\nschön, dass du hier übst! Diese E-Mail ist nur für dich. Du kannst sie in Ruhe lesen, beantworten oder löschen.\n\nLiebe Grüße\n${me.von}`});
+  mails.push(
+    {id:'m1',folder:'inbox',read:false,from:friend,addr:fAddr,to:myAddr,subj:'Grillen am Samstag?',date:'Heute, 09:12',body:`${hallo}\n\nwir grillen am Samstag ab 17 Uhr bei uns im Garten. Hast du Zeit und Lust?\n\nLiebe Grüße\n${ff}`},
+    {id:'m2',folder:'inbox',read:false,phish:true,from:'Musterbank Sicherheit',addr:'service@musterbank.konto-sperre.example',to:myAddr,subj:'Ihr Konto wird in 24 Stunden gesperrt!',date:'Heute, 07:45',body:'Sehr geehrter Kunde,\n\nwir haben ungewöhnliche Aktivitäten auf Ihrem Konto festgestellt. Bestätigen Sie SOFORT Ihre Zugangsdaten, sonst wird Ihr Konto in 24 Stunden gesperrt.',link:{text:'Jetzt Konto bestätigen',href:'http://musterbank.konto-sperre.example/login'},sign:'Ihr Musterbank Sicherheitsteam'},
+    {id:'m3',folder:'inbox',read:false,phish:true,from:'Paketdienst',addr:'info@zustellung-paket24.example',to:myAddr,subj:'Ihr Paket konnte nicht zugestellt werden',date:'Gestern, 18:30',body:'Hallo,\n\nIhr Paket wartet auf Sie. Für die erneute Zustellung ist eine Gebühr von 1,99 € offen. Bezahlen Sie innerhalb von 48 Stunden, sonst geht das Paket zurück.',link:{text:'Gebühr jetzt bezahlen',href:'http://paket-gebuehr.example/zahlung'}},
+    {id:'m4',folder:'inbox',read:true,from:'Stadtbibliothek',addr:'newsletter@bibliothek.example',to:myAddr,subj:'Neue Bücher im Oktober',date:'Mo, 10:02',body:'Liebe Leserinnen und Leser,\n\ndiesen Monat gibt es wieder viele neue Bücher und Hörbücher. Wir freuen uns auf Ihren Besuch!\n\nIhre Stadtbibliothek'}
+  );
+  return{n:10,repliedBack:false,me:myAddr,friend:{name:friend,first:ff,addr:fAddr},mails};
+};
+let MS=(P.mail&&Array.isArray(P.mail.mails))?JSON.parse(JSON.stringify(P.mail)):MAIL_INIT();
+if(!MS.friend)MS.friend={name:'Maria Huber',first:'Maria',addr:'maria.huber@post.example'};
+if(!MS.me)MS.me='harry@post.example';
+const MV={folder:'inbox',open:null,compose:null};
+const MFOLD=[['inbox','📥 Posteingang'],['sent','📤 Gesendet'],['spam','⚠️ Spam'],['trash','🗑️ Papierkorb']];
+let NET_TASKS=[];
+function buildNetTasks(){const f=MS.friend;NET_TASKS=[
+  {id:'n1',title:'Im Internet suchen',text:'Tippe in das Suchfeld: Bus Graz Fahrplan und drücke Enter.',real:'Du kannst auch direkt oben in die Adressleiste tippen. Auch dort wird gesucht.',check:()=>NETF.searched},
+  {id:'n2',title:'Werbung erkennen',text:'Klicke auf das erste Ergebnis, das KEINE Anzeige ist.',real:'Ergebnisse mit „Anzeige“ oder „Gesponsert“ sind bezahlte Werbung. Die normalen Treffer kommen darunter.',check:()=>NETF.organic},
+  {id:'n3',title:'Zurück blättern',text:'Geh mit dem Pfeil ← oben links zurück zu den Suchergebnissen.',real:'Den Zurück-Pfeil gibt es in jedem Browser. Auf der Tastatur geht es mit Alt + ←.',check:()=>NETF.back},
+  {id:'n4',title:'Echte Adressen erkennen',text:'Beantworte unter dem Browser die Frage: Welche Adresse gehört wirklich zur Musterbank?',real:'Das Schloss 🔒 neben der Adresse heißt nur „verschlüsselte Verbindung“, nicht „seriöse Seite“. Auch Betrugsseiten haben ein Schloss.',check:()=>NETF.url},
+  {id:'n5',title:'Eine E-Mail beantworten',text:`Wechsle oben zu „E-Mail“. Öffne die Mail von ${f.name}, klicke „Antworten“, schreib „Ja, ich komme gerne!“ und klicke „Senden“.`,real:'Beim Antworten ist die Adresse schon eingetragen. „AW:“ im Betreff steht für „Antwort“.',check:()=>MS.mails.some(m=>m.folder==='sent'&&m.to.trim().toLowerCase()===MS.friend.addr&&/^AW:/i.test(m.subj))},
+  {id:'n6',title:'Ein Foto mitschicken',text:`Klicke „Neue E-Mail“. An: ${f.addr}, Betreff: Foto. Hänge mit 📎 das Bild „Geburtstag.jpg“ an und sende die Mail.`,real:'Die Büroklammer 📎 bedeutet in jedem E-Mail-Programm „Anhang“.',check:()=>MS.mails.some(m=>m.folder==='sent'&&m.att&&m.att.length>0)},
+  {id:'n7',title:'Betrug erkennen',text:'Zwei Mails im Posteingang sind Betrug. Prüfe Absender und Link (Maus drüber halten, nicht klicken!) und klicke jeweils „Als Betrug melden“.',real:'Typische Zeichen: Zeitdruck („sofort“, „24 Stunden“), keine persönliche Anrede, eine seltsame Absender-Adresse und Links, die woanders hinführen.',check:()=>['m2','m3'].every(id=>{const m=MS.mails.find(x=>x.id===id);return !!m&&m.folder==='spam';})}
+];}
+buildNetTasks();
+function mSave(){P.mail=MS;save();}
+function mRender(){
+  $('#mTitle').textContent='✉️ Post (Übung) – '+MS.me;
+  const f=$('#mFolders');
+  f.innerHTML=`<button class="btn m-new" id="mNew">✏️ Neue E-Mail</button>`+MFOLD.map(([id,l])=>{const u=MS.mails.filter(m=>m.folder===id&&!m.read).length;return `<button data-f="${id}" class="${MV.folder===id?'on':''}">${l}${u?` (${u})`:''}</button>`;}).join('');
+  $('#mNew').addEventListener('click',()=>{MV.compose={to:'',subj:'',body:'',att:[]};MV.open=null;mRender();setTimeout(()=>{const i=$('#cTo');if(i)i.focus();},30);});
+  $$('#mFolders [data-f]').forEach(b=>b.addEventListener('click',()=>{MV.folder=b.dataset.f;MV.open=null;MV.compose=null;mRender();}));
+  const list=MS.mails.filter(m=>m.folder===MV.folder);
+  $('#mList').innerHTML=list.length?list.map(m=>`<button class="m-item${m.read?'':' unread'}${MV.open===m.id?' on':''}" data-id="${m.id}"><div class="mf"><b>${esc(m.folder==='sent'?'An: '+m.to:m.from)}</b><span class="md">${esc(m.date)}</span></div><div class="ms">${m.att&&m.att.length?'📎 ':''}${esc(m.subj)}</div></button>`).join(''):'<div class="m-empty">Hier ist nichts.</div>';
+  $$('#mList [data-id]').forEach(b=>b.addEventListener('click',()=>{const m=MS.mails.find(x=>x.id===b.dataset.id);if(!m)return;m.read=true;MV.open=m.id;MV.compose=null;mSave();mRender();}));
+  const R=$('#mRead');
+  if(MV.compose)renderCompose(R);
+  else{const m=MV.open&&MS.mails.find(x=>x.id===MV.open);if(m)renderMail(R,m);else R.innerHTML='<div class="m-empty"><div><div class="ov-emoji">✉️</div><p>Klicke links auf eine E-Mail, um sie zu lesen.</p></div></div>';}
+}
+function renderMail(R,m){
+  const sent=m.folder==='sent';const tools=[];
+  if(!sent&&m.folder!=='trash')tools.push('<button class="tb" data-a="reply">↩️ Antworten</button>');
+  if(m.folder==='inbox')tools.push('<button class="tb" data-a="phish">⚠️ Als Betrug melden</button>');
+  if(m.folder==='spam'||m.folder==='trash')tools.push('<button class="tb" data-a="back">📥 Zurück in den Posteingang</button>');
+  if(m.folder!=='trash')tools.push('<button class="tb" data-a="del">🗑️ Löschen</button>');
+  R.innerHTML=`<div class="mv-tools">${tools.join('')}</div><h3>${esc(m.subj)}</h3>
+  <div class="mv-from"><b>${esc(m.from)}</b> <span class="mv-addr">${esc(m.addr)}</span></div>
+  <div class="mv-meta">An: ${esc(m.to)} | ${esc(m.date)}</div>
+  <div class="mv-body">${esc(m.body)}</div>
+  ${m.link?`<button class="mv-link" data-href="${esc(m.link.href)}">${esc(m.link.text)}</button>`:''}
+  ${m.sign?`<div class="mv-body">${esc(m.sign)}</div>`:''}
+  ${(m.att||[]).map(a=>`<span class="mv-att">📎 ${esc(a)}</span>`).join('')}
+  <div class="mv-status" id="mvStatus">${m.link?'Tipp: Halte die Maus über den roten Knopf (nicht klicken!) und schau hier, wohin er wirklich führt.':''}</div>`;
+  $$('[data-a]',R).forEach(b=>b.addEventListener('click',()=>mAction(b.dataset.a,m)));
+  const l=$('.mv-link',R);
+  if(l){
+    l.addEventListener('mouseenter',()=>{$('#mvStatus').innerHTML=`Dieser Knopf führt zu: <b>${esc(m.link.href)}</b>`;});
+    l.addEventListener('click',()=>modal(`<div class="ov-emoji">🛑</div><h3>Stopp – das wäre eine Betrugsseite!</h3><p>Der Knopf führt zu <b>${esc(m.link.href)}</b>. ${m.id==='m2'?'Dort würden Betrüger deine Zugangsdaten für das Konto abgreifen.':'Dort würden Betrüger deine Kartendaten abgreifen.'}</p><p class="muted">Im echten Leben: Nie über Links in solchen Mails einloggen oder bezahlen. Im Zweifel bei der Firma anrufen oder die Adresse selbst eintippen.</p>`,[{label:'Verstanden'}]));
+  }
+}
+function mAction(a,m){
+  if(a==='reply'){
+    if(m.phish){modal('<div class="ov-emoji">🤚</div><h3>Lieber nicht antworten</h3><p>Auf Betrugs-Mails antwortet man nie. Sonst wissen die Betrüger, dass deine Adresse echt ist. Melde sie lieber als Betrug.</p>',[{label:'Verstanden'}]);return;}
+    MV.compose={to:m.addr,subj:/^AW:/i.test(m.subj)?m.subj:'AW: '+m.subj,body:`\n\n----- Ursprüngliche Nachricht -----\nVon: ${m.from} <${m.addr}>\nBetreff: ${m.subj}\n\n${m.body}`,att:[],reply:true};
+    MV.open=null;mRender();
+    setTimeout(()=>{const t=$('#cBody');if(t){t.focus();t.setSelectionRange(0,0);t.scrollTop=0;}},30);
+  }else if(a==='phish'){
+    m.folder='spam';MV.open=null;mSave();
+    toast(m.phish?'Gut erkannt! Die Mail liegt jetzt im Spam-Ordner.':'Diese Mail ist eigentlich echt. Du findest sie im Spam-Ordner und kannst sie zurückholen.');
+    mRender();netCheck();
+  }else if(a==='back'){m.folder='inbox';MV.open=null;mSave();toast('Zurück im Posteingang.');mRender();}
+  else if(a==='del'){m.folder='trash';MV.open=null;mSave();toast('In den Papierkorb verschoben.');mRender();}
+}
+function renderCompose(R){
+  const c=MV.compose;
+  R.innerHTML=`<div class="cmp"><h3>${c.reply?'Antworten':'Neue E-Mail'}</h3>
+  <label>An <input id="cTo" value="${esc(c.to)}" placeholder="name@post.example" autocomplete="off" spellcheck="false"></label>
+  <label>Betreff <input id="cSubj" value="${esc(c.subj)}" autocomplete="off"></label>
+  <textarea id="cBody" aria-label="Text der E-Mail" placeholder="Dein Text …">${esc(c.body)}</textarea>
+  <div>${c.att.map((a,i)=>`<span class="mv-att">📎 ${esc(a)} <button class="att-x" data-rm="${i}" aria-label="Anhang entfernen">✕</button></span>`).join('')}</div>
+  <div class="cmp-tools"><button class="btn ghost" id="cAttach">📎 Datei anhängen</button><span class="grow"></span><button class="btn ghost" id="cCancel">Verwerfen</button><button class="btn" id="cSend">Senden</button></div></div>`;
+  $('#cTo').addEventListener('input',e=>{c.to=e.target.value;});
+  $('#cSubj').addEventListener('input',e=>{c.subj=e.target.value;});
+  $('#cBody').addEventListener('input',e=>{c.body=e.target.value;});
+  $$('[data-rm]',R).forEach(b=>b.addEventListener('click',()=>{c.att.splice(+b.dataset.rm,1);mRender();}));
+  $('#cAttach').addEventListener('click',pickAttachment);
+  $('#cCancel').addEventListener('click',()=>{MV.compose=null;mRender();});
+  $('#cSend').addEventListener('click',cSend);
+}
+function pickAttachment(){
+  const files=FS.items.filter(i=>i.type==='file'&&!inTrash(i.id));
+  modal(`<h3>📎 Datei anhängen</h3><p class="muted">Wähle eine Datei von deinem Computer.</p><div class="att-pick">${files.map(f=>`<button class="sd-row" data-att="${esc(f.name)}"><span>${icon(f)}</span><span>${esc(f.name)}</span><span class="muted" style="margin-left:auto;font-size:13px">${esc(fName(f.parent))}</span></button>`).join('')}</div>`,[{label:'Abbrechen',cls:'ghost'}]);
+  $$('#modalBody [data-att]').forEach(b=>b.addEventListener('click',()=>{if(MV.compose)MV.compose.att.push(b.dataset.att);closeModal();mRender();toast('Angehängt: '+b.dataset.att);}));
+}
+function cSend(){
+  const c=MV.compose;const to=c.to.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)){toast('Bitte eine gültige E-Mail-Adresse eingeben, zum Beispiel '+MS.friend.addr);return;}
+  if(!c.subj.trim()){toast('Bitte einen Betreff eingeben. Dann sieht man gleich, worum es geht.');return;}
+  const m={id:'m'+(MS.n++),folder:'sent',read:true,from:ME().name||'Ich',addr:MS.me,to,subj:c.subj.trim(),date:'Gerade eben',body:c.body,att:c.att.slice()};
+  MS.mails.unshift(m);MV.compose=null;MV.folder='sent';MV.open=m.id;mSave();toast('Gesendet! ✉️');
+  if(to.toLowerCase()===MS.friend.addr&&/^AW:/i.test(m.subj)&&!MS.repliedBack){
+    MS.repliedBack=true;
+    setTimeout(()=>{const fr=MS.friend;MS.mails.unshift({id:'m'+(MS.n++),folder:'inbox',read:false,from:fr.name,addr:fr.addr,to:MS.me,subj:m.subj,date:'Gerade eben',body:'Super, das freut mich! Dann bis Samstag 🙂\n\n'+fr.first});mSave();mRender();toast('📩 Neue E-Mail von '+fr.name);},3500);
+  }
+  mRender();netCheck();
+}
+function setNetView(v){$$('#netSeg .seg-b').forEach(b=>{b.classList.toggle('on',b.dataset.v===v);b.setAttribute('aria-selected',b.dataset.v===v);});$('#v-web').hidden=v!=='web';$('#v-mail').hidden=v!=='mail';}
+function setupNet(){
+  $$('#netSeg .seg-b').forEach(b=>b.addEventListener('click',()=>setNetView(b.dataset.v)));
+  $('#bBack').addEventListener('click',bBack);
+  $('#bHome').addEventListener('click',()=>{if(NET.page!=='home')bNav({page:'home',query:'',site:null});});
+  $('#bUrl').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();bGo(e.target.value);e.target.blur();}});
+  $('#bUrl').addEventListener('focus',e=>e.target.select());
+  const pg=$('#bPage');
+  pg.addEventListener('mouseover',e=>{const a=e.target.closest('[data-href]');const s=$('#bStatus');if(a){s.textContent=a.dataset.href;s.hidden=false;}else s.hidden=true;});
+  pg.addEventListener('mouseleave',()=>{$('#bStatus').hidden=true;});
+  $('#netReset').addEventListener('click',()=>{
+    MS=MAIL_INIT();buildNetTasks();P.mail=null;P.net={};Object.keys(NETF).forEach(k=>{NETF[k]=false;});
+    Object.assign(NET,{page:'home',query:'',site:null,hist:[]});Object.assign(MV,{folder:'inbox',open:null,compose:null});
+    $('#uqMsg').textContent='';save();renderUQ();bRender();mRender();renderTasks($('#netTasks'),NET_TASKS,P.net,'Internet');toast('Die Übung beginnt von vorne.');
+  });
+  renderUQ();bRender();mRender();renderTasks($('#netTasks'),NET_TASKS,P.net,'Internet');
+}
+
+/* ================= Startseite: Fortschritt ================= */
+function renderDashboard(){
+  const parts={
+    tippen:[LESSONS.filter(l=>((P.typing[l.id]||{}).stars||0)>=1).length,LESSONS.length,'Lektionen'],
+    maus:[Object.keys(MOUSE_EX).filter(k=>P.mouse[k]).length,Object.keys(MOUSE_EX).length,'Übungen'],
+    kuerzel:[SC.filter(s=>P.shortcuts[s.k]).length,SC.length,'Kürzeln'],
+    word:[WORD_TASKS.filter(t=>P.word[t.id]).length,WORD_TASKS.length,'Aufgaben'],
+    excel:[XL_TASKS.filter(t=>P.excel[t.id]).length,XL_TASKS.length,'Aufgaben'],
+    dateien:[FILE_TASKS.filter(t=>P.files[t.id]).length,FILE_TASKS.length,'Aufgaben'],
+    netz:[NET_TASKS.filter(t=>P.net[t.id]).length,NET_TASKS.length,'Aufgaben']
+  };
+  let a=0,b=0;
+  Object.entries(parts).forEach(([k,[d,n,lbl]])=>{
+    a+=d;b+=n;const card=$(`.step[data-step="${k}"]`);if(!card)return;
+    $('.bar i',card).style.width=(d/n*100)+'%';
+    $('.step-prog',card).textContent=`${d} von ${n} ${lbl}`;
+    card.classList.toggle('complete',d===n);
+  });
+  const pct=Math.round(a/b*100);$('#totalPct').textContent=pct+' %';$('#totalBar').style.width=pct+'%';
+  lastParts=parts;
+  const me=ME();
+  $('#hello').textContent=me.name?`Servus ${me.name}!`:'Servus!';
+  const site=me.name?(/[sßxz]$/i.test(me.name)?me.name+'’':me.name+'s')+' PC-Werkstatt':'PC-Werkstatt';
+  $('#brandName').textContent=site;$('#footName').textContent=site;$('#brandLogo').textContent=(me.name||'P').charAt(0).toUpperCase();document.title=site;
+  const L=$('#letter');
+  if(me.nachricht){L.hidden=false;L.innerHTML=`<div>${me.von?`<b>Von ${esc(me.von)}:</b> `:''}„${esc(me.nachricht)}“</div>`;}else L.hidden=true;
+  renderCaps(me);
+  const today=(P.days||[]).includes(dayKey());const st=streak();const total=(P.days||[]).length;
+  $('#todayBox').innerHTML=`<span class="pill${today?' ok':''}">${today?'✅ Heute schon geübt':'👋 Heute noch nicht geübt'}</span>${st>1?`<span class="pill">🔥 ${st} Tage hintereinander</span>`:''}${total?`<span class="pill">📅 ${total} ${total===1?'Übungstag':'Übungstage'}</span>`:''}`;
+  const next=STEPS.find(([k])=>parts[k][0]<parts[k][1]);const cb=$('#contBtn');
+  if(!next){cb.textContent='🏆 Zur Urkunde';cb.href='#urkunde';}
+  else if(a===0){cb.textContent='Mit Schritt 1 anfangen';cb.href='#tippen';}
+  else{cb.textContent=`Weiter mit Schritt ${next[1]}: ${next[2]}`;cb.href='#'+next[0];}
+  const left=b-a;$('#ukTeaser').textContent=next?`Noch ${left} ${left===1?'Aufgabe':'Aufgaben'} bis dahin.`:'Alle sieben Schritte geschafft. Deine Urkunde ist fertig!';
+  if(!P.celebrated)P.celebrated={};let dirty=false;
+  STEPS.forEach(([k])=>{if(parts[k][0]===parts[k][1]&&!P.celebrated[k]){P.celebrated[k]=true;dirty=true;if(dashReady)celebrateQ.push(k);}});
+  if(!next&&!P.doneDate){P.doneDate=dayKey();dirty=true;if(dashReady)celebrateQ.push('all');}
+  if(dirty){try{localStorage.setItem(STORE,JSON.stringify(P));}catch(e){}}
+  if(celebrateQ.length&&dashReady)setTimeout(flushCelebrate,900);
+}
+const STEPS=[['tippen',1,'Tippen mit 10 Fingern'],['maus',2,'Die Maus'],['kuerzel',3,'Tastenkürzel'],['word',4,'Word'],['excel',5,'Excel'],['dateien',6,'Dateien & Ordner'],['netz',7,'Internet & E-Mail']];
+let lastParts=null,dashReady=false;const celebrateQ=[];
+function renderCaps(me){
+  const nm=(me.name||'').toUpperCase().replace(/[^A-ZÄÖÜ]/g,'').slice(0,9);
+  const rows=[nm||'ICH','KANN','DAS'];let i=0;
+  $('#capsArt').innerHTML=rows.map(r=>`<div class="caps-row">${Array.from(r).map(ch=>{const f=FINGER[ch.toLowerCase()];return `<span class="cap f-${f?FCLASS[f]:'thumb'}" style="--i:${i++}">${ch}</span>`;}).join('')}</div>`).join('');
+  $('#capsArt').classList.toggle('long',nm.length>6);
+}
+function flushCelebrate(){
+  if(!celebrateQ.length||!$('#modal').hidden||!$('#saveDlg').hidden)return;
+  const k=celebrateQ.shift();const nm=ME().name;const hi=nm?', '+esc(nm):'';
+  if(k==='all'){modal(`<div class="ov-emoji">🏆</div><h3>Alle sieben Schritte geschafft${hi}!</h3><p>Das ist eine richtig starke Leistung. Deine Urkunde ist fertig.</p>`,[{label:'Später',cls:'ghost',focus:true},{label:'Urkunde ansehen',fn:()=>{location.hash='#urkunde';}}]);return;}
+  const s=STEPS.find(x=>x[0]===k);if(!s)return;const nx=STEPS[STEPS.indexOf(s)+1];
+  const acts=[{label:'Hier bleiben',cls:'ghost',focus:true}];
+  if(nx&&!celebrateQ.includes('all'))acts.push({label:`Weiter zu Schritt ${nx[1]}`,fn:()=>{location.hash='#'+nx[0];}});
+  modal(`<div class="ov-emoji">🎉</div><h3>Bravo${hi}!</h3><p>Schritt ${s[1]} „${esc(s[2])}“ ist geschafft.</p>`,acts);
+}
+const MONATE=['Jänner','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+const fmtDate=k=>{const [y,m,d]=k.split('-');return `${+d}. ${MONATE[+m-1]} ${y}`;};
+function renderUrkunde(){
+  const me=ME();const parts=lastParts||{};
+  const done=STEPS.map(([k,n,t])=>({t,ok:!!parts[k]&&parts[k][0]===parts[k][1]}));
+  const all=done.every(x=>x.ok);
+  let missing=0;STEPS.forEach(([k])=>{if(parts[k])missing+=parts[k][1]-parts[k][0];});
+  $('#ukIntro').textContent=all?'Herzlichen Glückwunsch! Du kannst sie ausdrucken und aufhängen.':`Die Urkunde ist fertig, sobald alle sieben Schritte geschafft sind. Es fehlen noch ${missing} ${missing===1?'Aufgabe':'Aufgaben'}.`;
+  $('#ukPrint').disabled=!all;
+  const date=fmtDate(P.doneDate||dayKey());
+  $('#urkunde').innerHTML=`<div class="uk-inner"><div class="uk-top">PC-Werkstatt</div><div class="uk-title">Urkunde</div><p class="uk-for">für</p><div class="uk-name">${esc(me.name||'…')}</div>
+  <p class="uk-text">${all?'hat alle sieben Schritte der PC-Werkstatt erfolgreich geschafft:':'ist auf dem besten Weg. Bisher geschafft:'}</p>
+  <ul class="uk-list">${done.map(x=>`<li class="${x.ok?'ok':''}">${x.ok?'✔':'○'} ${esc(x.t)}</li>`).join('')}</ul>
+  <div class="uk-foot"><div><div class="uk-line">${esc((me.ort?me.ort+', ':'')+'am '+date)}</div><small>Ort, Datum</small></div><div><div class="uk-line sig">${esc(me.von)}</div><small>Unterschrift</small></div></div></div>${all?'':'<div class="uk-stamp">noch nicht fertig</div>'}`;
+}
+const ME_FIELDS=[['meName','name'],['meVon','von'],['meMsg','nachricht'],['meOrt','ort'],['meHobby','hobbys'],['meEssen','essen'],['meLeute','leute'],['meTier','tier']];
+function readMeForm(){const o={};ME_FIELDS.forEach(([id,k])=>{o[k]=$('#'+id).value.trim();});return o;}
+function fillMeForm(){const c=Object.assign({},CONFIG,P.me||{});ME_FIELDS.forEach(([id,k])=>{$('#'+id).value=c[k]||'';});renderMePreview();}
+function renderMePreview(){
+  const keep=P.me;P.me=readMeForm();const s=personalSentences();const m=ME();P.me=keep;
+  const raw=[m.name,m.ort,m.essen,m.tier,m.von,...m.hobbys,...m.leute].join(' ');
+  $('#mePreview').innerHTML=`<p class="muted small" style="margin:0">Startseite: <b>${esc(m.name?'Servus '+m.name+'!':'Servus!')}</b></p><p class="muted small" style="margin:10px 0 0">Sätze für die Tipp-Lektion „Über mich“:</p><ul class="preview-list">${s.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>${typeable(raw)?'':'<p class="warnline">Hinweis: Wörter mit Zeichen wie é oder ñ lässt die Tipp-Übung weg, weil sie dafür Sondertasten braucht.</p>'}`;
+}
+function setupMe(){
+  ME_FIELDS.forEach(([id])=>$('#'+id).addEventListener('input',renderMePreview));
+  $('#meSave').addEventListener('click',()=>{
+    P.me=readMeForm();
+    if(!MS.mails.some(m=>m.folder==='sent')){MS=MAIL_INIT();P.mail=null;Object.assign(MV,{folder:'inbox',open:null,compose:null});buildNetTasks();mRender();renderTasks($('#netTasks'),NET_TASKS,P.net,'Internet');}
+    if(!P.wordHtml)editor.innerHTML=wordInit();
+    save();renderLessons();renderMePreview();toast('Gespeichert! Die Übungen verwenden jetzt deine Angaben.');
+  });
+  $('#ukPrint').addEventListener('click',()=>{document.body.classList.add('print-uk');window.print();});
+  window.addEventListener('afterprint',()=>document.body.classList.remove('print-uk'));
+}
+
+/* ================= Navigation ================= */
+const ROUTES=['start','tippen','maus','kuerzel','word','excel','dateien','netz','ich','urkunde'];
+let route='start';
+function go(){
+  if(!$('#modal').hidden)closeModal();
+  const h=(location.hash||'').replace('#','');
+  route=ROUTES.includes(h)?h:'start';
+  $$('main > section').forEach(s=>{s.hidden=s.id!=='r-'+route;});
+  $$('.nav a').forEach(a=>{if(a.getAttribute('href')==='#'+route)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  if(route!=='tippen'){stopTyping();stopGame();}
+  else if(sub==='lektion'){startLesson(T.idx??recIdx());}
+  if(route!=='kuerzel')stopQuiz();
+  if(route!=='dateien'){closeMenus();sdClose();}
+  if(route==='ich')fillMeForm();
+  if(route==='urkunde')renderUrkunde();
+  window.scrollTo(0,0);
+}
+
+/* ================= Tastatur-Verteiler ================= */
+document.addEventListener('keydown',e=>{
+  if(!$('#modal').hidden){if(e.key==='Escape')closeModal();return;}
+  if(route==='tippen'){
+    if(sub==='lektion'&&T.active)typingKey(e);
+    else if(sub==='spiel'&&G.running)gameKey(e);
+  }else if(route==='kuerzel'&&Q.active)quizKey(e);
+  else if(route==='dateien')xKey(e);
+});
+
+/* ================= Start ================= */
+kbTypeMap=buildKeyboard($('#kbType'));
+$('#handsType').innerHTML=handsSVG();
+kbQuizMap=buildKeyboard($('#kbQuiz'));
+$('#lRestart').addEventListener('click',()=>startLesson(T.idx??recIdx()));
+$$('#r-tippen .seg-b').forEach(b=>b.addEventListener('click',()=>setSub(b.dataset.sub)));
+$('#gStart').addEventListener('click',startGame);
+$('#qStart').addEventListener('click',startQuiz);
+$('#qHint').addEventListener('click',quizHint);
+$('#qSkip').addEventListener('click',()=>{if(!Q.lock)nextQ();});
+$('#arena').addEventListener('contextmenu',e=>{if(M.ex)e.preventDefault();});
+$('#arena').addEventListener('click',e=>{if(!e.target.closest('.ctx'))$$('.ctx',$('#arena')).forEach(x=>x.remove());});
+$('#resetAll').addEventListener('click',()=>modal('<h3>Gesamten Fortschritt zurücksetzen?</h3><p class="muted">Alle Sterne, Rekorde und erledigten Aufgaben werden gelöscht.</p>',[
+  {label:'Abbrechen',cls:'ghost',focus:true},
+  {label:'Ja, alles zurücksetzen',fn:()=>{try{localStorage.removeItem(STORE);}catch(e){}location.reload();}}
+]));
+renderLessons();renderMouseTabs();renderSC();setupWord();setupExcel();setupFiles();setupNet();setupMe();hud();
+window.addEventListener('hashchange',go);
+renderDashboard();dashReady=true;go();
+})();
+</script>
+</body>
+</html>
